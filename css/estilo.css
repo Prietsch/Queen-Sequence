@@ -280,7 +280,8 @@ form button:hover {
   max-width: 600px;
   width: 100%;
   border: none;
-  box-shadow: 0 0 15px #1db954;
+  box-shadow: none;
+  transition: none;
 }
 
 /* BOTÃO SPOTIFY */
