@@ -10,8 +10,9 @@
 </head>
 <body>
 
+  <!-- MENU FIXO -->
   <header class="menu-sticky">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Queen</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -33,15 +34,15 @@
 
   <main>
 
-    <!-- 1. Banda -->
+    <!-- SEÇÃO 1 -->
     <section id="banda" class="secao">
       <h1>Queen: A Lenda do Rock</h1>
-      <p>Formada em 1970, Queen é uma das maiores bandas da história da música. Com Freddie Mercury nos vocais, Brian May na guitarra, Roger Taylor na bateria e John Deacon no baixo, o grupo marcou gerações com seu som único e performances icônicas.</p>
+      <p>Formada em 1970, Queen é uma das maiores bandas da história da música...</p>
       <img src="./img/queen.jpg" alt="Banda Queen em apresentação ao vivo" />
     </section>
 
-    <!-- 2. Discografia -->
-    <section id="discografia" class="secao secao2">
+    <!-- SEÇÃO 2 -->
+    <section id="discografia" class="secao">
       <div class="conteudo">
         <h2>Discografia Marcante</h2>
         <p>Alguns dos álbuns mais importantes da carreira do Queen:</p>
@@ -55,11 +56,11 @@
       </div>
     </section>
 
-    <!-- 3. Formulário -->
+    <!-- SEÇÃO 3 - FORMULÁRIO -->
     <section id="formulario" class="secao">
       <div class="container d-flex flex-wrap align-items-center justify-content-center">
-        <picture class="col-md-6">
-          <img src="./img/queen_forms.jpg" alt="Queen" class="img-fluid rounded" loading="lazy" />
+        <picture class="col-md-6 d-flex justify-content-center">
+          <img src="./img/queen_forms.jpg" alt="Queen" class="img-fluid rounded img-form" loading="lazy" />
         </picture>
         <form class="col-md-6 p-4">
           <fieldset>
@@ -94,19 +95,20 @@
       </div>
     </section>
 
-    <!-- 4. Painel de Fotos Estilo Mosaico -->
+    <!-- SEÇÃO 4 - PAINEL -->
     <section id="painel" class="secao">
       <h2>Painel de Fotos</h2>
       <div class="painel-mosaico">
         <div class="painel-item" style="background-image: url('./img/queen1.jpg');"></div>
         <div class="painel-item" style="background-image: url('./img/queen2.jpg');"></div>
-        <div class="painel-item" style="background-image: url('./img/queen3.jpg');"></div>
+        <div class="painel-item wide" style="background-image: url('./img/queen3.jpg');"></div>
         <div class="painel-item" style="background-image: url('./img/queen4.jpg');"></div>
         <div class="painel-item" style="background-image: url('./img/queen5.jpg');"></div>
+        <div class="painel-item tall" style="background-image: url('./img/queen6.jpg');"></div>
       </div>
     </section>
 
-    <!-- 5. Carrossel + Tabela -->
+    <!-- SEÇÃO 5 -->
     <section id="carrossel" class="secao">
       <h2>Momentos Marcantes</h2>
       <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -137,7 +139,7 @@
       </table>
     </section>
 
-    <!-- 6. Animação -->
+    <!-- SEÇÃO 6 -->
     <section id="animacao" class="secao">
       <h2 class="animated-text">Obrigado por visitar!</h2>
       <div class="transition-box">Passe o mouse aqui!</div>
