@@ -1,18 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Queen - A Lenda do Rock</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  
+
+  <!-- CSS Separado -->
   <link rel="stylesheet" href="./css/estilo.css" />
 </head>
 <body>
@@ -39,12 +39,10 @@
   </header>
 
   <main>
-
     <!-- 1. Banda -->
     <section id="banda" class="secao">
       <h1>Queen: A Lenda do Rock</h1>
       <p>Formada em 1970, Queen é uma das maiores bandas da história da música. Com Freddie Mercury nos vocais, Brian May na guitarra, Roger Taylor na bateria e John Deacon no baixo, o grupo marcou gerações com seu som único e performances icônicas.</p>
-      <img src="./img/queen.webp" alt="Banda Queen em apresentação ao vivo" loading="lazy" />
     </section>
 
     <!-- 2. Discografia -->
@@ -102,7 +100,7 @@
       </div>
     </section>
 
-    <!-- 4. Painel de Fotos -->
+    <!-- 4. Painel -->
     <section id="painel" class="secao">
       <h2>Painel de Fotos</h2>
       <div class="painel-mosaico">
@@ -118,12 +116,9 @@
     <!-- 5. Carrossel + Tabela -->
     <section id="carrossel" class="secao">
       <h2>Momentos Marcantes</h2>
-
       <div class="tabela-scroll-container">
         <table class="table table-striped table-hover table-dark tabela-eventos">
-          <thead>
-            <tr><th>Ano</th><th>Evento</th></tr>
-          </thead>
+          <thead><tr><th>Ano</th><th>Evento</th></tr></thead>
           <tbody>
             <tr><td>1973</td><td>Lançamento do primeiro álbum "Queen"</td></tr>
             <tr><td>1975</td><td>Lançamento de "Bohemian Rhapsody"</td></tr>
@@ -134,34 +129,17 @@
           </tbody>
         </table>
       </div>
-
       <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-         <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./img/queen.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/discos.jpg" class="d-block w-100" alt="Discos Queen" loading="lazy" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/queen1.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/queen2.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/queen3.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/queen4.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/queen5.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/queen6.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
-            </div>
-          </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img src="./img/queen.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/discos.jpg" class="d-block w-100" alt="Discos Queen" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen1.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen2.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen3.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen4.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen5.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen6.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
+        </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
         </button>
@@ -171,32 +149,12 @@
       </div>
     </section>
 
-    <!-- 6. Animação -->
-  <section id="animacao">
-  <h2>Ouça a Playlist do Queen</h2>
-
-  <!-- Embed do Spotify -->
-  <iframe 
-    style="border-radius:12px" 
-    src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0ENBD2?utm_source=generator&theme=0" 
-    width="100%" 
-    height="352" 
-    frameborder="0" 
-    allowfullscreen="" 
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-    loading="lazy">
-  </iframe>
-
-  <!-- Botão para abrir direto no app ou site do Spotify -->
-  <a 
-    href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0ENBD2?si=lgivheQ8RIa43wn4oNvU4w" 
-    target="_blank" 
-    class="btn-video">
-    Abrir no Spotify
-  </a>
-</section>
-
-
+    <!-- 6. Spotify -->
+    <section id="animacao">
+      <h2>Ouça a Playlist do Queen</h2>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0ENBD2?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0ENBD2?si=lgivheQ8RIa43wn4oNvU4w" target="_blank" class="btn-video">Abrir no Spotify</a>
+    </section>
   </main>
 
   <footer class="text-center p-3 bg-dark text-light">
