@@ -204,15 +204,12 @@ form button:hover {
   transform: scale(1.03);
 }
 
-/* TABELA FIXA */
+/* TABELA NORMAL */
 .tabela-eventos {
   width: 100%;
   max-width: 900px;
-  margin: 0 auto 40px;
+  margin: 40px auto;
   padding: 10px;
-  z-index: 1000;
-  position: relative;
-  top: 0;
 }
 
 .tabela-eventos table {
