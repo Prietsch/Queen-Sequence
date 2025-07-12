@@ -14,6 +14,8 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 70px;
 }
 
 main {
@@ -34,17 +36,16 @@ img {
 
 /* MENU FIXO - HEADER */
 header.menu-sticky {
-  position: sticky;
+  position: fixed;
   top: 0;
-  width: 100vw;  /* garante largura total */
+  left: 0;
+  right: 0;
+  width: 100%;
   background-color: #111;
-  z-index: 1200; /* fica acima de tudo */
+  z-index: 1200;
   box-shadow: 0 2px 5px rgba(255, 204, 0, 0.5);
 }
 
-/* Removido qualquer regra que forçava position static na navbar */
-
-/* Estilo do menu */
 .navbar-nav .nav-link {
   color: #ffcc00;
   font-size: 1.1rem;
@@ -62,18 +63,18 @@ header.menu-sticky {
 /* SEÇÕES */
 .secao {
   min-height: 100vh;
-  width: 100vw; /* largura total da viewport */
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 80px 20px 40px;
   background-color: #111;
   text-align: center;
   color: #fff;
+  position: relative;
 }
 
-/* Alterna as cores das seções */
 .secao:nth-of-type(odd) {
   background-color: #222;
 }
@@ -82,38 +83,16 @@ header.menu-sticky {
   background-color: #111;
 }
 
-/* SEÇÃO 2 - Discografia, largura total e sem limite */
+/* SEÇÃO 2 */
 .secao2 {
-  padding: 50px 20px 80px;
+  padding: 80px 20px 40px;
+  width: 100vw;
+  margin: 0;
+  max-width: none;
   text-align: center;
   gap: 25px;
-  margin: 0;
-  min-height: 100vh;
-  width: 100vw;
 }
 
-/* Estilos texto da seção banda */
-#banda h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #ffcc00;
-}
-
-#banda p {
-  max-width: 600px;
-  font-size: 1.2rem;
-  margin: 0 auto 30px;
-  line-height: 1.5;
-  color: #eee;
-}
-
-#banda img {
-  max-width: 40%;
-  max-height: 350px;
-  box-shadow: 0 0 20px #ffcc00;
-}
-
-/* Estilos seção 2 texto e lista */
 .secao2 h2 {
   font-size: 2rem;
   margin-bottom: 15px;
@@ -213,48 +192,48 @@ form button:hover {
   cursor: pointer;
 }
 
-/* Tamanhos variados no grid */
 .painel-item:nth-child(2n) {
   grid-row: span 2;
 }
+
 .painel-item:nth-child(3n) {
   grid-column: span 2;
 }
+
 .painel-item:hover {
   transform: scale(1.03);
 }
 
-/* CARROSSEL */
-.carousel-inner img {
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #ffcc00;
+/* TABELA FIXA */
+.tabela-eventos {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 10px;
+  z-index: 1000;
+  position: relative;
+  top: 0;
 }
 
-/* TABELA */
-table {
-  max-width: 600px;
-  margin: 20px auto 0;
+.tabela-eventos table {
+  background-color: #222;
   color: #fff;
-  background-color: #222; /* cor da tabela */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 15px #ffcc00;
-  position: sticky; /* fixa a tabela na tela ao rolar */
-  top: 70px; /* abaixo do menu sticky */
-  z-index: 1100;
+  width: 100%;
 }
 
-table thead {
+.tabela-eventos thead {
   background-color: #ffcc00;
   color: #000;
 }
 
-table th,
-table td {
-  padding: 12px 15px;
+.tabela-eventos th,
+.tabela-eventos td {
+  padding: 12px 16px;
   border-bottom: 1px solid #444;
+  text-align: left;
 }
 
 /* ANIMAÇÃO */
