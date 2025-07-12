@@ -71,7 +71,7 @@ header.menu-sticky {
   padding: 80px 20px 40px;
   background-color: #111;
   text-align: center;
-  color: #fff;
+  color: #ffcc00;
   position: relative;
 }
 
@@ -91,6 +91,7 @@ header.menu-sticky {
   max-width: none;
   text-align: center;
   gap: 25px;
+  color: #ffcc00;
 }
 
 .secao2 h2 {
@@ -214,7 +215,7 @@ form button:hover {
 
 .tabela-eventos table {
   background-color: #222;
-  color: #fff;
+  color: #ffcc00;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 15px #ffcc00;
