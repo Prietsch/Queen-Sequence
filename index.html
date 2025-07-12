@@ -4,24 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Queen - A Lenda do Rock</title>
-
-  <!-- SEO e acessibilidade -->
-  <meta name="description" content="Tributo à banda Queen, a lenda do rock." />
-  <meta name="author" content="Seu nome" />
-  <meta property="og:title" content="Queen - A Lenda do Rock" />
-  <meta property="og:description" content="Tributo à banda Queen com conteúdo, fotos, carrossel, formulário e muito mais!" />
-  <meta property="og:image" content="./img/queen.jpg" />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#000000" />
-
-  <!-- Estilos e fontes -->
   <link rel="stylesheet" href="./css/estilo.css" />
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Menu fixo -->
   <header class="menu-sticky">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -45,14 +33,14 @@
 
   <main>
 
-    <!-- Seção 1: A Banda -->
+    <!-- 1. Banda -->
     <section id="banda" class="secao">
       <h1>Queen: A Lenda do Rock</h1>
       <p>Formada em 1970, Queen é uma das maiores bandas da história da música. Com Freddie Mercury nos vocais, Brian May na guitarra, Roger Taylor na bateria e John Deacon no baixo, o grupo marcou gerações com seu som único e performances icônicas.</p>
       <img src="./img/queen.jpg" alt="Banda Queen em apresentação ao vivo" loading="lazy" />
     </section>
 
-    <!-- Seção 2: Discografia -->
+    <!-- 2. Discografia -->
     <section id="discografia" class="secao secao2">
       <div class="conteudo">
         <h2>Discografia Marcante</h2>
@@ -67,31 +55,31 @@
       </div>
     </section>
 
-    <!-- Seção 3: Formulário -->
+    <!-- 3. Formulário -->
     <section id="formulario" class="secao">
       <div class="container d-flex flex-wrap align-items-center justify-content-center">
         <picture class="col-md-6">
           <source srcset="./img/queen.webp" type="image/webp">
           <img src="./img/queen.jpg" alt="Queen" class="img-fluid rounded" loading="lazy" />
         </picture>
-        <form class="col-md-6 p-4" role="form">
+        <form class="col-md-6 p-4">
           <fieldset>
             <legend>Fale conosco</legend>
             <div class="mb-3">
               <label for="nome" class="form-label">Nome:</label>
-              <input type="text" class="form-control" id="nome" name="nome" required>
+              <input type="text" class="form-control" id="nome" required>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" id="email" name="email" required>
+              <input type="email" class="form-control" id="email" required>
             </div>
             <div class="mb-3">
               <label for="nascimento" class="form-label">Data de nascimento:</label>
-              <input type="date" class="form-control" id="nascimento" name="nascimento">
+              <input type="date" class="form-control" id="nascimento">
             </div>
             <div class="mb-3">
               <label for="genero" class="form-label">Gênero musical favorito:</label>
-              <select class="form-select" id="genero" name="genero">
+              <select class="form-select" id="genero">
                 <option>Rock</option>
                 <option>Pop</option>
                 <option>Clássico</option>
@@ -99,7 +87,7 @@
             </div>
             <div class="mb-3">
               <label for="mensagem" class="form-label">Mensagem:</label>
-              <textarea class="form-control" id="mensagem" name="mensagem" rows="3"></textarea>
+              <textarea class="form-control" id="mensagem" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
           </fieldset>
@@ -107,7 +95,7 @@
       </div>
     </section>
 
-    <!-- Seção 4: Painel de Fotos -->
+    <!-- 4. Painel de Fotos -->
     <section id="painel" class="secao">
       <h2>Painel de Fotos</h2>
       <div class="painel-mosaico">
@@ -120,11 +108,12 @@
       </div>
     </section>
 
-    <!-- Seção 5: Carrossel + Tabela -->
+    <!-- 5. Carrossel + Tabela -->
     <section id="carrossel" class="secao">
       <h2>Momentos Marcantes</h2>
+
       <div class="tabela-eventos">
-        <table class="table table-striped">
+        <table>
           <thead>
             <tr><th>Ano</th><th>Evento</th></tr>
           </thead>
@@ -132,8 +121,9 @@
             <tr><td>1973</td><td>Lançamento do primeiro álbum "Queen"</td></tr>
             <tr><td>1975</td><td>Lançamento de "Bohemian Rhapsody"</td></tr>
             <tr><td>1981</td><td>Turnê mundial "The Game Tour"</td></tr>
-            <tr><td>1985</td><td>Live Aid</td></tr>
-            <tr><td>1991</td><td>Morte de Freddie Mercury</td></tr>
+            <tr><td>1985</td><td>Apresentação histórica no Live Aid</td></tr>
+            <tr><td>1991</td><td>Falecimento de Freddie Mercury</td></tr>
+            <tr><td>2005</td><td>Turnê com Paul Rodgers</td></tr>
           </tbody>
         </table>
       </div>
@@ -156,7 +146,7 @@
       </div>
     </section>
 
-    <!-- Seção 6: Animação -->
+    <!-- 6. Animação -->
     <section id="animacao" class="secao">
       <h2 class="animated-text">Obrigado por visitar!</h2>
       <div class="transition-box">Passe o mouse aqui!</div>
@@ -164,12 +154,10 @@
 
   </main>
 
-  <!-- Rodapé -->
   <footer class="text-center p-3 bg-dark text-light">
     <p>&copy; 2025 - Tributo ao Queen</p>
   </footer>
 
-  <!-- Scripts Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
