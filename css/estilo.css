@@ -214,26 +214,30 @@ form button:hover {
   box-shadow: 0 0 15px #ffcc00;
 }
 
-/* TABELA NORMAL */
-.tabela-eventos {
+/* TABELA COM SCROLL */
+.tabela-scroll-container {
+  max-height: 310px; /* 3 linhas visíveis */
+  overflow-y: auto;
+  border: 1px solid #ffcc00;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ffcc00;
+  margin-bottom: 30px;
   width: 100%;
   max-width: 900px;
-  margin: 40px auto;
-  padding: 10px;
 }
 
-.tabela-eventos table {
+.tabela-eventos {
+  width: 100%;
+  border-collapse: collapse;
   background-color: #222;
   color: #ffcc00;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 15px #ffcc00;
-  width: 100%;
 }
 
 .tabela-eventos thead {
   background-color: #ffcc00;
   color: #000;
+  position: sticky;
+  top: 0;
 }
 
 .tabela-eventos th,
@@ -241,33 +245,6 @@ form button:hover {
   padding: 12px 16px;
   border-bottom: 1px solid #444;
   text-align: left;
-}
-
-/* NOVA SEÇÃO EVENTOS COM SCROLL */
-.eventos-container {
-  max-height: calc(3 * 100px); /* altura máxima = 3 eventos * altura do evento */
-  overflow-y: auto; /* ativa scroll vertical quando ultrapassar a altura */
-  border: 1px solid #ffcc00;
-  padding: 10px;
-  background-color: #111;
-  border-radius: 8px;
-  box-shadow: 0 0 15px #ffcc00;
-  width: 320px; /* largura fixa ou ajuste conforme desejar */
-  margin: 20px auto;
-}
-
-/* Define altura fixa para cada evento */
-.evento {
-  height: 100px;  /* ajuste conforme a altura real do seu evento */
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #222;
-  color: #ffcc00;
-  border-radius: 6px;
-  box-shadow: 0 0 8px #ffcc00 inset;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* ANIMAÇÃO */
