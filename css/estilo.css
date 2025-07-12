@@ -1,4 +1,3 @@
-
 /* RESET E BASE */
 * {
   margin: 0;
@@ -243,6 +242,8 @@ form button:hover {
   border-bottom: 1px solid #444;
   text-align: left;
 }
+
+/* NOVA SEÇÃO EVENTOS COM SCROLL */
 .eventos-container {
   max-height: calc(3 * 100px); /* altura máxima = 3 eventos * altura do evento */
   overflow-y: auto; /* ativa scroll vertical quando ultrapassar a altura */
@@ -251,12 +252,13 @@ form button:hover {
   background-color: #111;
   border-radius: 8px;
   box-shadow: 0 0 15px #ffcc00;
-  width: 320px; /* largura fixa ou responsiva conforme quiser */
+  width: 320px; /* largura fixa ou ajuste conforme desejar */
+  margin: 20px auto;
 }
 
 /* Define altura fixa para cada evento */
 .evento {
-  height: 100px;  /* ajuste conforme a altura do seu evento */
+  height: 100px;  /* ajuste conforme a altura real do seu evento */
   margin-bottom: 10px;
   padding: 10px;
   background-color: #222;
@@ -267,6 +269,7 @@ form button:hover {
   align-items: center;
   justify-content: center;
 }
+
 /* ANIMAÇÃO */
 .animated-text {
   animation: fadeInUp 2s ease-in-out;
@@ -361,8 +364,3 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-
-
-
-
-
