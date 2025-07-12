@@ -10,8 +10,9 @@
 </head>
 <body>
 
+  <!-- Navbar -->
   <header class="menu-sticky">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Queen</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -32,10 +33,14 @@
   </header>
 
   <main>
-    <!-- 1. Banda -->
+    <!-- 1. A Banda -->
     <section id="banda" class="secao">
       <h1>Queen: A Lenda do Rock</h1>
-      <p>Formada em 1970, Queen é uma das maiores bandas da história da música. Com Freddie Mercury nos vocais, Brian May na guitarra, Roger Taylor na bateria e John Deacon no baixo, o grupo marcou gerações com seu som único e performances icônicas.</p>
+      <p>
+        Formada em 1970, Queen é uma das maiores bandas da história da música. 
+        Com Freddie Mercury nos vocais, Brian May na guitarra, Roger Taylor na bateria 
+        e John Deacon no baixo, o grupo marcou gerações com seu som único e performances icônicas.
+      </p>
       <img src="./img/queen.jpg" alt="Banda Queen em apresentação ao vivo" />
     </section>
 
@@ -59,7 +64,7 @@
       <div class="container d-flex flex-wrap align-items-center justify-content-center">
         <picture class="col-md-6">
           <source srcset="./img/queen.webp" type="image/webp">
-          <img src="./img/queen.jpg" alt="Queen" class="img-fluid rounded" loading="lazy" />
+          <img src="./img/queen.jpg" alt="Queen" class="img-fluid rounded shadow" loading="lazy" />
         </picture>
         <form class="col-md-6 p-4">
           <fieldset>
@@ -88,7 +93,7 @@
               <label for="mensagem" class="form-label">Mensagem:</label>
               <textarea class="form-control" id="mensagem" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-warning text-dark">Enviar</button>
           </fieldset>
         </form>
       </div>
@@ -106,7 +111,7 @@
       </div>
     </section>
 
-    <!-- 5. Carrossel e Tabela -->
+    <!-- 5. Carrossel -->
     <section id="carrossel" class="secao">
       <h2>Momentos Marcantes</h2>
       <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -125,13 +130,24 @@
           <span class="carousel-control-next-icon"></span>
         </button>
       </div>
-      <table class="table table-striped mt-4">
+
+      <!-- Tabela -->
+      <table class="table table-striped table-dark mt-4">
         <thead>
-          <tr><th>Ano</th><th>Evento</th></tr>
+          <tr>
+            <th>Ano</th>
+            <th>Evento</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>1985</td><td>Live Aid</td></tr>
-          <tr><td>1975</td><td>Lançamento de Bohemian Rhapsody</td></tr>
+          <tr>
+            <td>1985</td>
+            <td>Live Aid</td>
+          </tr>
+          <tr>
+            <td>1975</td>
+            <td>Lançamento de Bohemian Rhapsody</td>
+          </tr>
         </tbody>
       </table>
     </section>
@@ -143,10 +159,12 @@
     </section>
   </main>
 
-  <footer class="x text-center p-3 bg-dark text-light">
+  <!-- Rodapé -->
+  <footer class="text-center p-3 bg-dark text-warning">
     <p>&copy; 2025 - Tributo ao Queen</p>
   </footer>
 
+  <!-- JS Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
