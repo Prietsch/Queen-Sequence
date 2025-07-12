@@ -70,9 +70,10 @@ header.menu-sticky {
 }
 
 .logo img {
-  max-height: 50px;
-  width: auto;
-  box-shadow: none; 
+  max-height: 60px; /* altura máxima do logo */
+  width: auto;      /* mantém proporção */
+  box-shadow: none;
+  transition: max-height 0.3s ease; /* se quiser animação suave ao redimensionar */
 }
 
 /* SEÇÕES */
