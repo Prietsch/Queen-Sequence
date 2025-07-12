@@ -10,8 +10,9 @@
 </head>
 <body>
 
+  <!-- MENU FIXO -->
   <header class="menu-sticky">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Queen</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -33,14 +34,14 @@
 
   <main>
 
-    <!-- 1. Banda -->
+    <!-- 1. A BANDA -->
     <section id="banda" class="secao">
       <h1>Queen: A Lenda do Rock</h1>
       <p>Formada em 1970, Queen é uma das maiores bandas da história da música. Com Freddie Mercury nos vocais, Brian May na guitarra, Roger Taylor na bateria e John Deacon no baixo, o grupo marcou gerações com seu som único e performances icônicas.</p>
       <img src="./img/queen.jpg" alt="Banda Queen em apresentação ao vivo" />
     </section>
 
-    <!-- 2. Discografia -->
+    <!-- 2. DISCOGRAFIA -->
     <section id="discografia" class="secao secao2">
       <div class="conteudo">
         <h2>Discografia Marcante</h2>
@@ -55,11 +56,12 @@
       </div>
     </section>
 
-    <!-- 3. Formulário -->
+    <!-- 3. FORMULÁRIO -->
     <section id="formulario" class="secao">
       <div class="container d-flex flex-wrap align-items-center justify-content-center">
         <picture class="col-md-6">
-          <img src="./img/queen_forms.jpg" alt="Queen" class="img-fluid rounded" loading="lazy" />
+          <source srcset="./img/queen.webp" type="image/webp">
+          <img src="./img/queen.jpg" alt="Queen" class="img-fluid rounded" loading="lazy" />
         </picture>
         <form class="col-md-6 p-4">
           <fieldset>
@@ -94,7 +96,7 @@
       </div>
     </section>
 
-    <!-- 4. Painel de Fotos Estilo Mosaico -->
+    <!-- 4. PAINEL -->
     <section id="painel" class="secao">
       <h2>Painel de Fotos</h2>
       <div class="painel-mosaico">
@@ -107,9 +109,26 @@
       </div>
     </section>
 
-    <!-- 5. Carrossel + Tabela -->
+    <!-- 5. CARROSSEL + TABELA -->
     <section id="carrossel" class="secao">
       <h2>Momentos Marcantes</h2>
+
+      <!-- TABELA EM CIMA DAS FOTOS -->
+      <table class="table table-striped mt-3 mb-5">
+        <thead>
+          <tr><th>Ano</th><th>Evento</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1973</td><td>Álbum de estreia "Queen"</td></tr>
+          <tr><td>1975</td><td>Lançamento de "Bohemian Rhapsody"</td></tr>
+          <tr><td>1981</td><td>Turnê na América Latina</td></tr>
+          <tr><td>1985</td><td>Live Aid</td></tr>
+          <tr><td>1992</td><td>Tributo a Freddie Mercury</td></tr>
+          <tr><td>2005</td><td>Retorno com Paul Rodgers</td></tr>
+        </tbody>
+      </table>
+
+      <!-- CARROSSEL -->
       <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -117,6 +136,9 @@
           </div>
           <div class="carousel-item">
             <img src="./img/discos.jpg" class="d-block w-100" alt="Discos Queen">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/queen4.jpg" class="d-block w-100" alt="Queen ao vivo">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -126,19 +148,9 @@
           <span class="carousel-control-next-icon"></span>
         </button>
       </div>
-
-      <table class="table table-striped mt-4">
-        <thead>
-          <tr><th>Ano</th><th>Evento</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1985</td><td>Live Aid</td></tr>
-          <tr><td>1975</td><td>Lançamento de Bohemian Rhapsody</td></tr>
-        </tbody>
-      </table>
     </section>
 
-    <!-- 6. Animação -->
+    <!-- 6. ANIMAÇÃO -->
     <section id="animacao" class="secao">
       <h2 class="animated-text">Obrigado por visitar!</h2>
       <div class="transition-box">Passe o mouse aqui!</div>
