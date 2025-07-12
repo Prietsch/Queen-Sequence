@@ -1,344 +1,161 @@
-/* RESET E BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Queen - A Lenda do Rock</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="menu-sticky">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Queen</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#banda">A Banda</a></li>
+            <li class="nav-item"><a class="nav-link" href="#discografia">Discografia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#formulario">Formulário</a></li>
+            <li class="nav-item"><a class="nav-link" href="#painel">Painel</a></li>
+            <li class="nav-item"><a class="nav-link" href="#carrossel">Carrossel</a></li>
+            <li class="nav-item"><a class="nav-link" href="#animacao">Animação</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-html, body {
-  height: 100%;
-  font-family: 'Russo One', sans-serif;
-  background-color: #000;
-  color: #fff;
-  scroll-behavior: smooth;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+  <main>
+    <!-- Seção Banda -->
+    <section id="banda" class="secao">
+      <h1>Queen: A Lenda do Rock</h1>
+      <p>Formada em 1970, Queen é uma das maiores bandas da história da música. Com Freddie Mercury nos vocais, Brian May na guitarra, Roger Taylor na bateria e John Deacon no baixo, o grupo marcou gerações com seu som único e performances icônicas.</p>
+      <img src="img/queen.jpg" alt="Banda Queen em apresentação ao vivo" loading="lazy" />
+    </section>
 
-main {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-}
+    <!-- Seção Discografia -->
+    <section id="discografia" class="secao secao2">
+      <div class="conteudo">
+        <h2>Discografia Marcante</h2>
+        <p>Alguns dos álbuns mais importantes da carreira do Queen:</p>
+        <ul>
+          <li><strong>A Night at the Opera</strong> (1975)</li>
+          <li><strong>News of the World</strong> (1977)</li>
+          <li><strong>Jazz</strong> (1978)</li>
+          <li><strong>The Game</strong> (1980)</li>
+        </ul>
+        <img src="img/discos.jpg" alt="Capa de discos clássicos do Queen" loading="lazy" />
+      </div>
+    </section>
 
-img {
-  width: 90%;
-  max-width: 400px;
-  height: auto;
-  margin: 20px auto 0;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #ffcc00;
-  display: block;
-}
+    <!-- Seção Formulário -->
+    <section id="formulario" class="secao">
+      <div class="container d-flex flex-wrap align-items-center justify-content-center">
+        <picture class="col-md-6">
+          <source srcset="img/queen.webp" type="image/webp">
+          <img src="img/queen_forms.jpg" alt="Queen" class="img-fluid rounded" loading="lazy" />
+        </picture>
+        <form class="col-md-6 p-4">
+          <fieldset>
+            <legend>Fale conosco</legend>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome:</label>
+              <input type="text" class="form-control" id="nome" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="nascimento" class="form-label">Data de nascimento:</label>
+              <input type="date" class="form-control" id="nascimento">
+            </div>
+            <div class="mb-3">
+              <label for="genero" class="form-label">Gênero musical favorito:</label>
+              <select class="form-select" id="genero">
+                <option>Rock</option>
+                <option>Pop</option>
+                <option>Clássico</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="mensagem" class="form-label">Mensagem:</label>
+              <textarea class="form-control" id="mensagem" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
 
-/* MENU FIXO - HEADER */
-header.menu-sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: #111;
-  z-index: 1200;
-  box-shadow: 0 2px 5px rgba(255, 204, 0, 0.5);
-}
+    <!-- Seção Painel -->
+    <section id="painel" class="secao">
+      <h2>Painel de Fotos</h2>
+      <div class="painel-mosaico">
+        <div class="painel-item" style="background-image: url('img/queen1.jpg');"></div>
+        <div class="painel-item" style="background-image: url('img/queen2.jpg');"></div>
+        <div class="painel-item" style="background-image: url('img/queen3.jpg');"></div>
+        <div class="painel-item" style="background-image: url('img/queen4.jpg');"></div>
+        <div class="painel-item" style="background-image: url('img/queen5.jpg');"></div>
+        <div class="painel-item" style="background-image: url('img/queen6.jpg');"></div>
+      </div>
+    </section>
 
-.navbar-nav .nav-link {
-  color: #ffcc00;
-  font-size: 1.1rem;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
-}
+    <!-- Seção Carrossel -->
+    <section id="carrossel" class="secao">
+      <h2>Momentos Marcantes</h2>
+      <div class="tabela-scroll-container">
+        <table class="tabela-eventos">
+          <thead>
+            <tr><th>Ano</th><th>Evento</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1973</td><td>Lançamento do primeiro álbum "Queen"</td></tr>
+            <tr><td>1975</td><td>Lançamento de "Bohemian Rhapsody"</td></tr>
+            <tr><td>1981</td><td>Turnê mundial "The Game Tour"</td></tr>
+            <tr><td>1985</td><td>Apresentação histórica no Live Aid</td></tr>
+            <tr><td>1991</td><td>Falecimento de Freddie Mercury</td></tr>
+            <tr><td>2005</td><td>Turnê com Paul Rodgers</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
-  background-color: #ffcc00;
-  color: #000;
-}
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img src="img/queen.jpg" class="d-block w-100" alt="Show Queen" loading="lazy"></div>
+          <div class="carousel-item"><img src="img/discos.jpg" class="d-block w-100" alt="Discos Queen" loading="lazy"></div>
+          <div class="carousel-item"><img src="img/queen1.jpg" class="d-block w-100" alt="Show Queen" loading="lazy"></div>
+          <div class="carousel-item"><img src="img/queen2.jpg" class="d-block w-100" alt="Show Queen" loading="lazy"></div>
+          <div class="carousel-item"><img src="img/queen3.jpg" class="d-block w-100" alt="Show Queen" loading="lazy"></div>
+          <div class="carousel-item"><img src="img/queen4.jpg" class="d-block w-100" alt="Show Queen" loading="lazy"></div>
+          <div class="carousel-item"><img src="img/queen5.jpg" class="d-block w-100" alt="Show Queen" loading="lazy"></div>
+          <div class="carousel-item"><img src="img/queen6.jpg" class="d-block w-100" alt="Show Queen" loading="lazy"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
 
-/* SEÇÕES */
-.secao {
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 20px 40px;
-  background-color: #111;
-  text-align: center;
-  color: #ffcc00;
-  position: relative;
-}
+    <!-- Seção Animação -->
+    <section id="animacao" class="secao">
+      <h2 class="animated-text">Obrigado por visitar!</h2>
+      <div class="transition-box">Passe o mouse aqui!</div>
+    </section>
+  </main>
 
-.secao:nth-of-type(odd) {
-  background-color: #222;
-}
+  <footer class="text-center p-3 bg-dark text-light">
+    <p>&copy; 2025 - Tributo ao Queen</p>
+  </footer>
 
-.secao:nth-of-type(even) {
-  background-color: #111;
-}
-
-/* SEÇÃO 2 */
-.secao2 {
-  padding: 80px 20px 40px;
-  width: 100vw;
-  margin: 0;
-  max-width: none;
-  text-align: center;
-  gap: 25px;
-  color: #ffcc00;
-}
-
-.secao2 h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #ffcc00;
-}
-
-.secao2 p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  line-height: 1.4;
-  color: #ddd;
-}
-
-.secao2 ul {
-  text-align: left;
-  max-width: 400px;
-  margin: 0 auto 25px;
-  list-style-type: disc;
-  color: #ddd;
-  padding-left: 20px;
-}
-
-.secao2 ul li {
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.secao2 img {
-  max-width: 60%;
-  max-height: 350px;
-  box-shadow: 0 0 20px #ffcc00;
-}
-
-/* FORMULÁRIO */
-form legend {
-  font-size: 1.4rem;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-form .form-label {
-  color: #fff;
-  font-size: 1rem;
-}
-
-form .form-control,
-form .form-select {
-  background-color: #222;
-  color: #fff;
-  border: 1px solid #ffcc00;
-  border-radius: 6px;
-}
-
-form .form-control::placeholder,
-form .form-select option {
-  color: #ccc;
-}
-
-form .form-control:focus,
-form .form-select:focus {
-  border-color: #fff000;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
-}
-
-form button {
-  font-weight: bold;
-  background-color: #ffcc00;
-  color: #000;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #e6b800;
-}
-
-/* PAINEL - Mosaico com tamanhos variados */
-.painel-mosaico {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-auto-rows: 150px;
-  gap: 10px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.painel-item {
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ffcc00;
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-
-.painel-item:nth-child(2n) {
-  grid-row: span 2;
-}
-
-.painel-item:nth-child(3n) {
-  grid-column: span 2;
-}
-
-.painel-item:hover {
-  transform: scale(1.03);
-}
-
-/* CARROSSEL */
-.carousel-inner img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: none;
-}
-
-/* TABELA COM SCROLL */
-.tabela-scroll-container {
-  max-height: calc(2 * 60px + 50px);
-  overflow-y: auto;
-  border: 1px solid #ffcc00;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #ffcc00;
-  margin-bottom: 30px;
-  width: 100%;
-  max-width: 900px;
-}
-
-.tabela-eventos {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #222;
-  color: #ffcc00;
-}
-
-.tabela-eventos thead {
-  background-color: #ffcc00;
-  color: #000;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.tabela-eventos th,
-.tabela-eventos td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #444;
-  text-align: left;
-  height: 60px;
-}
-
-/* ANIMAÇÃO */
-.animated-text {
-  animation: fadeInUp 2s ease-in-out;
-  color: #ffcc00;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.transition-box {
-  padding: 20px 40px;
-  margin-top: 20px;
-  background-color: #222;
-  border: 2px solid #ffcc00;
-  border-radius: 8px;
-  transition: transform 0.3s, background-color 0.3s;
-  color: #fff;
-  cursor: pointer;
-}
-
-.transition-box:hover {
-  transform: scale(1.1);
-  background-color: #ffcc00;
-  color: #000;
-}
-
-/* FOOTER */
-footer {
-  background-color: #111;
-  color: #ffcc00;
-  text-align: center;
-  padding: 15px 10px;
-  font-size: 1rem;
-  flex-shrink: 0;
-  box-shadow: inset 0 1px 5px rgba(255, 204, 0, 0.3);
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  #banda h1 {
-    font-size: 2rem;
-  }
-
-  .secao2 h2 {
-    font-size: 1.6rem;
-  }
-
-  .secao2 ul {
-    max-width: 100%;
-  }
-
-  #banda img,
-  .secao2 img {
-    max-width: 90%;
-    max-height: 250px;
-  }
-
-  .painel-mosaico {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  #banda p,
-  .secao2 p {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  #banda img,
-  .secao2 img {
-    max-width: 100%;
-    max-height: 180px;
-  }
-
-  .painel-mosaico {
-    grid-template-columns: 1fr;
-  }
-}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
