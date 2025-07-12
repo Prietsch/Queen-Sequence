@@ -33,22 +33,102 @@
 
   <main>
 
-    <!-- Seções anteriores omitidas para foco -->
+    <!-- 1. Banda -->
+    <section id="banda" class="secao">
+      <h1>Queen: A Lenda do Rock</h1>
+      <p>Formada em 1970, Queen é uma das maiores bandas da história da música. Com Freddie Mercury nos vocais, Brian May na guitarra, Roger Taylor na bateria e John Deacon no baixo, o grupo marcou gerações com seu som único e performances icônicas.</p>
+      <img src="./img/queen.jpg" alt="Banda Queen em apresentação ao vivo" loading="lazy" />
+    </section>
 
-    <!-- Momentos Marcantes -->
+    <!-- 2. Discografia -->
+    <section id="discografia" class="secao secao2">
+      <div class="conteudo">
+        <h2>Discografia Marcante</h2>
+        <p>Alguns dos álbuns mais importantes da carreira do Queen:</p>
+        <ul>
+          <li><strong>A Night at the Opera</strong> (1975)</li>
+          <li><strong>News of the World</strong> (1977)</li>
+          <li><strong>Jazz</strong> (1978)</li>
+          <li><strong>The Game</strong> (1980)</li>
+        </ul>
+        <img src="./img/discos.jpg" alt="Capa de discos clássicos do Queen" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- 3. Formulário -->
+    <section id="formulario" class="secao">
+      <div class="container d-flex flex-wrap align-items-center justify-content-center">
+        <picture class="col-md-6">
+          <source srcset="./img/queen.webp" type="image/webp">
+          <img src="./img/queen.jpg" alt="Queen" class="img-fluid rounded" loading="lazy" />
+        </picture>
+        <form class="col-md-6 p-4">
+          <fieldset>
+            <legend>Fale conosco</legend>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome:</label>
+              <input type="text" class="form-control" id="nome" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="nascimento" class="form-label">Data de nascimento:</label>
+              <input type="date" class="form-control" id="nascimento">
+            </div>
+            <div class="mb-3">
+              <label for="genero" class="form-label">Gênero musical favorito:</label>
+              <select class="form-select" id="genero">
+                <option>Rock</option>
+                <option>Pop</option>
+                <option>Clássico</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="mensagem" class="form-label">Mensagem:</label>
+              <textarea class="form-control" id="mensagem" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <!-- 4. Painel de Fotos -->
+    <section id="painel" class="secao">
+      <h2>Painel de Fotos</h2>
+      <div class="painel-mosaico">
+        <div class="painel-item" style="background-image: url('./img/queen1.jpg');"></div>
+        <div class="painel-item" style="background-image: url('./img/queen2.jpg');"></div>
+        <div class="painel-item" style="background-image: url('./img/queen3.jpg');"></div>
+        <div class="painel-item" style="background-image: url('./img/queen4.jpg');"></div>
+        <div class="painel-item" style="background-image: url('./img/queen5.jpg');"></div>
+        <div class="painel-item" style="background-image: url('./img/queen6.jpg');"></div>
+      </div>
+    </section>
+
+    <!-- 5. Carrossel + Tabela -->
     <section id="carrossel" class="secao">
       <h2>Momentos Marcantes</h2>
 
-      <div class="eventos-container">
-        <div class="evento">1973 - Lançamento do primeiro álbum "Queen"</div>
-        <div class="evento">1975 - Lançamento de "Bohemian Rhapsody"</div>
-        <div class="evento">1981 - Turnê mundial "The Game Tour"</div>
-        <div class="evento">1985 - Apresentação histórica no Live Aid</div>
-        <div class="evento">1991 - Falecimento de Freddie Mercury</div>
-        <div class="evento">2005 - Turnê com Paul Rodgers</div>
+      <div class="tabela-eventos">
+        <table>
+          <thead>
+            <tr><th>Ano</th><th>Evento</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1973</td><td>Lançamento do primeiro álbum "Queen"</td></tr>
+            <tr><td>1975</td><td>Lançamento de "Bohemian Rhapsody"</td></tr>
+            <tr><td>1981</td><td>Turnê mundial "The Game Tour"</td></tr>
+            <tr><td>1985</td><td>Apresentação histórica no Live Aid</td></tr>
+            <tr><td>1991</td><td>Falecimento de Freddie Mercury</td></tr>
+            <tr><td>2005</td><td>Turnê com Paul Rodgers</td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="./img/queen.jpg" class="d-block w-100" alt="Show Queen" loading="lazy">
@@ -66,11 +146,12 @@
       </div>
     </section>
 
-    <!-- Animação -->
+    <!-- 6. Animação -->
     <section id="animacao" class="secao">
       <h2 class="animated-text">Obrigado por visitar!</h2>
       <div class="transition-box">Passe o mouse aqui!</div>
     </section>
+
   </main>
 
   <footer class="text-center p-3 bg-dark text-light">
