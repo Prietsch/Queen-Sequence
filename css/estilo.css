@@ -32,17 +32,18 @@ img {
   display: block;
 }
 
-/* NAVBAR */
+/* NAVBAR - sticky top fixo */
 header.menu-sticky {
   position: sticky;
   top: 0;
   background-color: #111;
-  z-index: 1000;
+  z-index: 1050; /* garante sobreposição */
   box-shadow: 0 2px 5px rgba(255, 204, 0, 0.5);
 }
 
+/* Links do menu com cor amarela */
 .navbar-nav .nav-link {
-  color: #ffcc00;
+  color: #ffcc00 !important;
   font-size: 1.1rem;
   padding: 6px 12px;
   border-radius: 4px;
@@ -51,11 +52,11 @@ header.menu-sticky {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-  background-color: #ffcc00;
-  color: #000;
+  background-color: #ffcc00 !important;
+  color: #000 !important;
 }
 
-/* SECOES */
+/* SEÇÕES */
 .secao {
   min-height: 100vh;
   display: flex;
@@ -65,8 +66,10 @@ header.menu-sticky {
   padding: 40px 20px;
   background-color: #111;
   text-align: center;
+  color: #fff;
 }
 
+/* Cor um pouco diferente para seção banda */
 #banda {
   background-color: #222;
 }
@@ -91,10 +94,10 @@ header.menu-sticky {
   box-shadow: 0 0 20px #ffcc00;
 }
 
+/* Seção Discografia */
 .secao2 {
   background-color: #333;
   padding: 50px 20px 80px;
-  text-align: center;
   gap: 25px;
 }
 
@@ -148,7 +151,8 @@ form .form-label {
 }
 
 form .form-control,
-form .form-select {
+form .form-select,
+form textarea {
   background-color: #222;
   color: #fff;
   border: 1px solid #ffcc00;
@@ -161,9 +165,11 @@ form .form-select option {
 }
 
 form .form-control:focus,
-form .form-select:focus {
+form .form-select:focus,
+form textarea:focus {
   border-color: #fff000;
   box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+  outline: none;
 }
 
 form button {
@@ -174,6 +180,7 @@ form button {
   border-radius: 6px;
   padding: 10px 20px;
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 form button:hover {
@@ -196,7 +203,8 @@ form button:hover {
   background-position: center;
   border-radius: 10px;
   box-shadow: 0 0 10px #ffcc00;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 /* Tamanhos variados no grid */
@@ -236,6 +244,11 @@ form button:hover {
   border: 2px solid #ffcc00;
   border-radius: 8px;
   transition: transform 0.3s, background-color 0.3s;
+  color: #fff;
+  cursor: pointer;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .transition-box:hover {
@@ -276,7 +289,7 @@ footer {
   }
 
   .painel-mosaico {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
