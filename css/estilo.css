@@ -69,6 +69,12 @@ header.menu-sticky {
   color: #000;
 }
 
+.logo img {
+  max-height: 50px;
+  width: auto;
+  box-shadow: none; 
+}
+
 /* SEÇÕES */
 section.secao {
   min-height: 100vh;
