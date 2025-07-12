@@ -138,12 +138,12 @@ header.menu-sticky {
 /* FORMULÁRIO */
 form legend {
   font-size: 1.4rem;
-  color: #ffcc00;
+  color: #fff;
   margin-bottom: 20px;
 }
 
 form .form-label {
-  color: #ffcc00;
+  color: #fff;
   font-size: 1rem;
 }
 
@@ -153,6 +153,11 @@ form .form-select {
   color: #fff;
   border: 1px solid #ffcc00;
   border-radius: 6px;
+}
+
+form .form-control::placeholder,
+form .form-select option {
+  color: #ccc;
 }
 
 form .form-control:focus,
