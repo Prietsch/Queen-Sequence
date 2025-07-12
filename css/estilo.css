@@ -207,14 +207,14 @@ form button:hover {
 
 /* CARROSSEL */
 .carousel-inner img {
-  max-height: 400px; /* limite de altura */
-  width: auto;
+  max-height: 400px;
+  width: 100%;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 15px #ffcc00;
 }
 
-/* TABELA NORMAL */
+/* TABELA */
 .tabela-eventos {
   width: 100%;
   max-width: 900px;
@@ -229,6 +229,7 @@ form button:hover {
   overflow: hidden;
   box-shadow: 0 0 15px #ffcc00;
   width: 100%;
+  border-collapse: collapse;
 }
 
 .tabela-eventos thead {
