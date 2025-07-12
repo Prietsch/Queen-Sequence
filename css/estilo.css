@@ -69,13 +69,6 @@ header.menu-sticky {
   color: #000;
 }
 
-.logo img {
-  max-height: 60px; /* altura máxima do logo */
-  width: auto;      /* mantém proporção */
-  box-shadow: none;
-  transition: max-height 0.3s ease; /* se quiser animação suave ao redimensionar */
-}
-
 /* SEÇÕES */
 section.secao {
   min-height: 100vh;
@@ -89,13 +82,20 @@ section.secao {
   text-align: center;
   color: #ffcc00;
   position: relative;
-
   opacity: 0;
   transform: translateY(40px);
   animation-name: fadeSlideIn;
   animation-duration: 1s;
   animation-timeline: view(block root 0% 80%);
   animation-fill-mode: forwards;
+}
+
+/* Fundo com imagem na seção #banda */
+#banda {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/queen.webp') no-repeat center center;
+  background-size: cover;
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px #000;
 }
 
 .secao:nth-of-type(odd) {
