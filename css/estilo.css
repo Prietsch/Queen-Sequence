@@ -70,8 +70,6 @@ header.menu-sticky {
 }
 
 /* SEÇÕES */
-
-/* Scroll-driven fade e slide para todas as sections */
 section.secao {
   min-height: 100vh;
   width: 100vw;
@@ -246,8 +244,6 @@ form button:hover {
 }
 
 /* TABELA */
-
-/* A tabela já estilizada pelo Bootstrap, só controlamos container */
 .tabela-scroll-container {
   max-height: calc(2 * 60px + 50px);
   overflow-y: auto;
@@ -259,48 +255,45 @@ form button:hover {
   max-width: 900px;
 }
 
-/* ANIMAÇÃO NA ÚLTIMA SEÇÃO */
+/* SEÇÃO FINAL - SPOTIFY */
 #animacao {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 40px 20px;
+  padding: 60px 20px;
   background: linear-gradient(145deg, #222, #111);
-  color: #ffcc00; /* cor principal do texto */
+  color: #ffcc00;
   min-height: 100vh;
-  animation-name: pulseGlow;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-timeline: view(block root 0% 100%);
   text-align: center;
 }
 
 #animacao h2 {
   font-size: 2.5rem;
-  text-shadow: 0 0 10px #ffcc00;
-  color: #ffcc00; /* garantir cor visível */
+  color: #ffcc00;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px #aa8800;
 }
 
-#animacao p {
-  font-size: 1.2rem;
+#animacao iframe {
   max-width: 600px;
-  color: #ffcc00; /* amarelo bem visível */
-  text-shadow: 0 0 5px #aa8800; /* leve brilho para destacar */
+  width: 100%;
+  border: none;
+  box-shadow: 0 0 15px #1db954;
 }
 
+/* BOTÃO SPOTIFY */
 .btn-video {
   display: inline-block;
   padding: 15px 30px;
   font-size: 1.25rem;
   color: #000;
-  background: #ffcc00;
+  background: #1db954;
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 0 10px #ffcc00;
+  box-shadow: 0 0 10px #1db954;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
   user-select: none;
@@ -308,59 +301,10 @@ form button:hover {
 
 .btn-video:hover,
 .btn-video:focus {
-  background: #ffd633;
-  box-shadow: 0 0 25px #ffe066;
-  transform: scale(1.1) rotate(2deg);
+  background: #1ed760;
+  box-shadow: 0 0 25px #1ed760;
+  transform: scale(1.08);
   outline: none;
-}
-
-/* Pulsar suave para o container da seção */
-@keyframes pulseGlow {
-  0%, 100% {
-    color: #ffcc00;
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
-    transform: scale(1);
-  }
-  50% {
-    color: #fff066;
-    text-shadow: 0 0 25px #fff066, 0 0 35px #fff066;
-    transform: scale(1.02);
-  }
-}
-
-.animated-text {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #ffcc00;
-  animation: fadeInUp 2s ease-in-out;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.transition-box {
-  padding: 20px 40px;
-  margin-top: 20px;
-  background-color: #222;
-  border: 2px solid #ffcc00;
-  border-radius: 8px;
-  transition: transform 0.3s, background-color 0.3s;
-  color: #fff;
-  cursor: pointer;
-}
-
-.transition-box:hover {
-  transform: scale(1.1);
-  background-color: #ffcc00;
-  color: #000;
 }
 
 /* FOOTER */
