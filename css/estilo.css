@@ -14,6 +14,7 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-top: 70px;
 }
 
 main {
@@ -32,10 +33,16 @@ img {
   display: block;
 }
 
-/* NAVBAR */
+.img-form {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* NAVBAR FIXA */
 header.menu-sticky {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   background-color: #111;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(255, 204, 0, 0.5);
@@ -55,7 +62,7 @@ header.menu-sticky {
   color: #000;
 }
 
-/* SECOES */
+/* SEÇÕES */
 .secao {
   min-height: 100vh;
   display: flex;
@@ -63,76 +70,15 @@ header.menu-sticky {
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
+  text-align: center;
+}
+
+.secao:nth-of-type(odd) {
+  background-color: #1a1a1a;
+}
+
+.secao:nth-of-type(even) {
   background-color: #111;
-  text-align: center;
-}
-
-#banda {
-  background-color: #222;
-}
-
-#banda h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #ffcc00;
-}
-
-#banda p {
-  max-width: 600px;
-  font-size: 1.2rem;
-  margin: 0 auto 30px;
-  line-height: 1.5;
-  color: #eee;
-}
-
-#banda img {
-  max-width: 40%;
-  max-height: 350px;
-  box-shadow: 0 0 20px #ffcc00;
-}
-
-.secao2 {
-  background-color: #333;
-  padding: 50px 20px 80px;
-  text-align: center;
-  gap: 25px;
-}
-
-.secao2 .conteudo {
-  max-width: 650px;
-  color: #eee;
-}
-
-.secao2 h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #ffcc00;
-}
-
-.secao2 p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  line-height: 1.4;
-}
-
-.secao2 ul {
-  text-align: left;
-  max-width: 400px;
-  margin: 0 auto 25px;
-  list-style-type: disc;
-  color: #ddd;
-  padding-left: 20px;
-}
-
-.secao2 ul li {
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.secao2 img {
-  max-width: 60%;
-  max-height: 350px;
-  box-shadow: 0 0 20px #ffcc00;
 }
 
 /* FORMULÁRIO */
@@ -144,7 +90,6 @@ form legend {
 
 form .form-label {
   color: #fff;
-  font-size: 1rem;
 }
 
 form .form-control,
@@ -153,17 +98,6 @@ form .form-select {
   color: #fff;
   border: 1px solid #ffcc00;
   border-radius: 6px;
-}
-
-form .form-control::placeholder,
-form .form-select option {
-  color: #ccc;
-}
-
-form .form-control:focus,
-form .form-select:focus {
-  border-color: #fff000;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
 }
 
 form button {
@@ -199,25 +133,16 @@ form button:hover {
   transition: transform 0.3s ease;
 }
 
-/* tamanhos variados */
-.painel-item:nth-child(3n) {
-  grid-row: span 2;
+.painel-item:hover {
+  transform: scale(1.05);
 }
 
-.painel-item:nth-child(4n) {
+.painel-item.wide {
   grid-column: span 2;
 }
 
-.painel-item:nth-child(5n) {
-  grid-row: span 3;
-}
-
-.painel-item:nth-child(6n) {
-  grid-column: span 3;
-}
-
-.painel-item:hover {
-  transform: scale(1.05);
+.painel-item.tall {
+  grid-row: span 2;
 }
 
 /* ANIMAÇÃO */
@@ -267,35 +192,14 @@ footer {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-  #banda h1 {
-    font-size: 2rem;
-  }
-  .secao2 h2 {
-    font-size: 1.6rem;
-  }
-  .secao2 ul {
+  .img-form {
     max-width: 100%;
-  }
-  #banda img,
-  .secao2 img {
-    max-width: 90%;
     max-height: 250px;
   }
-}
 
-@media (max-width: 480px) {
-  #banda p,
-  .secao2 p {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-  nav {
-    flex-direction: column;
-    gap: 8px;
-  }
-  #banda img,
-  .secao2 img {
-    max-width: 100%;
-    max-height: 180px;
+  .painel-item.wide,
+  .painel-item.tall {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 }
