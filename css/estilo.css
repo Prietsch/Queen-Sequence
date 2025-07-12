@@ -8,28 +8,13 @@
 html, body {
   height: 100%;
   font-family: 'Russo One', sans-serif;
-  background: linear-gradient(270deg, #1a001a, #330033, #660066, #330033, #1a001a);
-  background-size: 1000% 1000%;
-  animation: bgGradient 30s ease infinite;
+  background-color: #000;
   color: #fff;
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-/* Animação suave do fundo com gradiente em movimento */
-@keyframes bgGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 p, li, label, input, textarea, select, table, button {
@@ -49,13 +34,13 @@ img {
   height: auto;
   margin: 20px auto 0;
   border-radius: 10px;
-  box-shadow: 0 0 15px #e60073;
+  box-shadow: 0 0 15px #ffcc00;
   display: block;
   transition: transform 0.3s ease;
 }
 
 img:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 /* MENU FIXO - HEADER */
@@ -65,13 +50,13 @@ header.menu-sticky {
   left: 0;
   right: 0;
   width: 100%;
-  background: linear-gradient(to right, #000, #33001a);
+  background-color: #111;
   z-index: 1200;
-  box-shadow: 0 2px 8px rgba(255, 0, 128, 0.4);
+  box-shadow: 0 2px 5px rgba(255, 204, 0, 0.5);
 }
 
 .navbar-nav .nav-link {
-  color: #ff66cc;
+  color: #ffcc00;
   font-size: 1.1rem;
   padding: 6px 12px;
   border-radius: 4px;
@@ -80,12 +65,14 @@ header.menu-sticky {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-  background-color: #ff66cc;
+  background-color: #ffcc00;
   color: #000;
 }
 
 /* SEÇÕES */
-.secao {
+
+/* Scroll-driven fade e slide para todas as sections */
+section.secao {
   min-height: 100vh;
   width: 100vw;
   display: flex;
@@ -93,28 +80,76 @@ header.menu-sticky {
   align-items: center;
   justify-content: center;
   padding: 0px 20px 40px;
-  background: linear-gradient(135deg, #1a001a, #0d0d0d);
+  background: linear-gradient(145deg, #111, #1c1c1c);
   text-align: center;
-  color: #ff66cc;
+  color: #ffcc00;
   position: relative;
+
+  opacity: 0;
+  transform: translateY(40px);
+  animation-name: fadeSlideIn;
+  animation-duration: 1s;
+  animation-timeline: view(block root 0% 80%);
+  animation-fill-mode: forwards;
 }
 
 .secao:nth-of-type(odd) {
-  background: linear-gradient(135deg, #0d0d0d, #1a001a);
+  background: linear-gradient(145deg, #1c1c1c, #111);
 }
 
 .secao:nth-of-type(even) {
-  background: linear-gradient(135deg, #1a001a, #0d0d0d);
+  background: linear-gradient(145deg, #111, #1c1c1c);
 }
 
-.secao2 h2,
-.animated-text {
-  text-shadow: 2px 2px 8px #e60073;
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SEÇÃO 2 */
+.secao2 {
+  padding: 80px 20px 40px;
+  width: 100vw;
+  margin: 0;
+  max-width: none;
+  text-align: center;
+  gap: 25px;
+  color: #ffcc00;
+}
+
+.secao2 h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+.secao2 p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  color: #ddd;
 }
 
 .secao2 ul {
-  border-left: 3px solid #e60073;
-  padding-left: 15px;
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto 25px;
+  list-style-type: disc;
+  color: #ddd;
+  padding-left: 20px;
+}
+
+.secao2 ul li {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.secao2 img {
+  max-width: 60%;
+  max-height: 350px;
+  box-shadow: 0 0 20px #ffcc00;
 }
 
 /* FORMULÁRIO */
@@ -133,9 +168,8 @@ form .form-control,
 form .form-select {
   background-color: #222;
   color: #fff;
-  border: 1px solid #ff66cc;
+  border: 1px solid #ffcc00;
   border-radius: 6px;
-  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 form .form-control::placeholder,
@@ -145,24 +179,23 @@ form .form-select option {
 
 form .form-control:focus,
 form .form-select:focus {
-  border-color: #ff33cc;
-  box-shadow: 0 0 8px rgba(255, 51, 204, 0.8);
+  border-color: #fff000;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
 }
 
 form button {
   font-weight: bold;
-  background: linear-gradient(to right, #ff66cc, #ffccff);
+  background-color: #ffcc00;
   color: #000;
   border: none;
   border-radius: 6px;
   padding: 10px 20px;
-  box-shadow: 0 0 10px #ff66cc;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s;
   cursor: pointer;
 }
 
 form button:hover {
-  background: linear-gradient(to left, #ff66cc, #ffccff);
+  background-color: #e6b800;
 }
 
 /* PAINEL */
@@ -180,8 +213,8 @@ form button:hover {
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  box-shadow: 0 0 10px #ff33cc;
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px #ffcc00;
+  transition: transform 0.3s;
   cursor: pointer;
 }
 
@@ -194,8 +227,8 @@ form button:hover {
 }
 
 .painel-item:hover {
-  transform: scale(1.07) rotate(1deg);
-  box-shadow: 0 0 20px #ff33cc;
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 0 15px #ffd700;
 }
 
 /* CARROSSEL */
@@ -213,54 +246,46 @@ form button:hover {
 }
 
 /* TABELA */
+
+/* A tabela já estilizada pelo Bootstrap, só controlamos container */
 .tabela-scroll-container {
   max-height: calc(2 * 60px + 50px);
   overflow-y: auto;
-  border: 1px solid #ff33cc;
+  border: 1px solid #ffcc00;
   border-radius: 8px;
-  box-shadow: 0 0 10px #ff33cc;
+  box-shadow: 0 0 10px #ffcc00;
   margin-bottom: 30px;
+  width: 100%;
   max-width: 900px;
 }
 
-.tabela-eventos {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #222;
-  color: #ff66cc;
+/* ANIMAÇÃO NA ÚLTIMA SEÇÃO */
+#animacao {
+  animation-name: pulseGlow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-timeline: view(block root 0% 100%);
 }
 
-.tabela-eventos thead {
-  background: linear-gradient(to right, #ff66cc, #ffccff);
-  color: #000;
-  position: sticky;
-  top: 0;
-  z-index: 1;
+@keyframes pulseGlow {
+  0%, 100% {
+    color: #ff66cc;
+    text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+    transform: scale(1);
+  }
+  50% {
+    color: #ffccff;
+    text-shadow: 0 0 20px #ffccff, 0 0 30px #ffccff;
+    transform: scale(1.05);
+  }
 }
 
-.tabela-eventos th,
-.tabela-eventos td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #444;
-  text-align: left;
-  height: 60px;
-}
-
-.tabela-eventos tbody tr:nth-child(even) {
-  background-color: #1a001a;
-}
-
-.tabela-eventos tbody tr:hover {
-  background-color: #330033;
-}
-
-/* ANIMAÇÃO */
 .animated-text {
-  animation: fadeInUp 2s ease-in-out;
-  color: #ff66cc;
   font-size: 2rem;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 8px #e60073;
+  color: #ffcc00;
+  animation: fadeInUp 2s ease-in-out;
 }
 
 @keyframes fadeInUp {
@@ -278,7 +303,7 @@ form button:hover {
   padding: 20px 40px;
   margin-top: 20px;
   background-color: #222;
-  border: 2px solid #ff66cc;
+  border: 2px solid #ffcc00;
   border-radius: 8px;
   transition: transform 0.3s, background-color 0.3s;
   color: #fff;
@@ -287,19 +312,19 @@ form button:hover {
 
 .transition-box:hover {
   transform: scale(1.1);
-  background: linear-gradient(to right, #ff66cc, #ffccff);
+  background-color: #ffcc00;
   color: #000;
 }
 
 /* FOOTER */
 footer {
-  background: linear-gradient(to right, #1a001a, #330033);
-  color: #ff66cc;
+  background: linear-gradient(to right, #111, #222);
+  color: #ffcc00;
   text-align: center;
   padding: 15px 10px;
   font-size: 1rem;
   flex-shrink: 0;
-  box-shadow: inset 0 1px 10px #e60073;
+  box-shadow: inset 0 1px 10px #ffcc00;
 }
 
 /* RESPONSIVO */
