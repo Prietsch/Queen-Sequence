@@ -375,3 +375,70 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+#animacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  background: linear-gradient(145deg, #222, #111);
+  color: #ffcc00;
+  min-height: 100vh;
+  animation-name: pulseGlow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-timeline: view(block root 0% 100%);
+  text-align: center;
+}
+
+#animacao h2 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px #ffcc00;
+}
+
+#animacao p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  color: #ffd;
+}
+
+.btn-video {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.25rem;
+  color: #000;
+  background: #ffcc00;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 10px #ffcc00;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-video:hover,
+.btn-video:focus {
+  background: #ffd633;
+  box-shadow: 0 0 25px #ffe066;
+  transform: scale(1.1) rotate(2deg);
+  outline: none;
+}
+
+/* Pulsar suave para o container da seção */
+@keyframes pulseGlow {
+  0%, 100% {
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+    transform: scale(1);
+  }
+  50% {
+    color: #fff066;
+    text-shadow: 0 0 25px #fff066, 0 0 35px #fff066;
+    transform: scale(1.02);
+  }
+}
+
