@@ -208,15 +208,15 @@ form button:hover {
 /* CARROSSEL */
 .carousel-inner img {
   width: 100%;
-  height: 300px; /* altura fixa */
+  height: 300px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 15px #ffcc00;
 }
 
-/* TABELA COM SCROLL */
+/* TABELA COM SCROLL (2 eventos visíveis) */
 .tabela-scroll-container {
-  max-height: 310px; /* 3 linhas visíveis */
+  max-height: calc(2 * 60px + 50px); /* 2 linhas de 60px + cabeçalho */
   overflow-y: auto;
   border: 1px solid #ffcc00;
   border-radius: 8px;
@@ -238,6 +238,7 @@ form button:hover {
   color: #000;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .tabela-eventos th,
@@ -245,6 +246,7 @@ form button:hover {
   padding: 12px 16px;
   border-bottom: 1px solid #444;
   text-align: left;
+  height: 60px;
 }
 
 /* ANIMAÇÃO */
