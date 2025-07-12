@@ -8,7 +8,7 @@
 html, body {
   height: 100%;
   font-family: 'Russo One', sans-serif;
-  background-color: #000;
+  background-color: #111;
   color: #fff;
   scroll-behavior: smooth;
   display: flex;
@@ -26,6 +26,7 @@ main {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
+  padding-top: 70px; /* espaço para menu fixed */
 }
 
 img {
@@ -44,17 +45,16 @@ img:hover {
 }
 
 /* MENU FIXO - HEADER */
-header.menu-sticky {
+header.menu-sticky nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
-  background-color: #111;
   z-index: 1200;
   box-shadow: 0 2px 5px rgba(255, 204, 0, 0.5);
 }
 
+/* Navbar links */
 .navbar-nav .nav-link {
   color: #ffcc00;
   font-size: 1.1rem;
@@ -69,9 +69,9 @@ header.menu-sticky {
   color: #000;
 }
 
-/* SEÇÕES */
-
+/* SECTIONS com backgrounds de cinza claro para cinza quase escuro em gradiente */
 /* Scroll-driven fade e slide para todas as sections */
+
 section.secao {
   min-height: 100vh;
   width: 100vw;
@@ -79,8 +79,9 @@ section.secao {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 20px 40px;
-  background: linear-gradient(145deg, #111, #1c1c1c);
+  padding: 40px 20px;
+  /* gradiente cinza claro para cinza escuro */
+  background: linear-gradient(145deg, #d3d3d3, #2a2a2a);
   text-align: center;
   color: #ffcc00;
   position: relative;
@@ -93,12 +94,12 @@ section.secao {
   animation-fill-mode: forwards;
 }
 
-.secao:nth-of-type(odd) {
-  background: linear-gradient(145deg, #1c1c1c, #111);
+section.secao:nth-of-type(odd) {
+  background: linear-gradient(145deg, #e0e0e0, #1a1a1a);
 }
 
-.secao:nth-of-type(even) {
-  background: linear-gradient(145deg, #111, #1c1c1c);
+section.secao:nth-of-type(even) {
+  background: linear-gradient(145deg, #c0c0c0, #3a3a3a);
 }
 
 @keyframes fadeSlideIn {
@@ -108,7 +109,7 @@ section.secao {
   }
 }
 
-/* SEÇÃO 2 */
+/* Seção 2 */
 .secao2 {
   padding: 80px 20px 40px;
   width: 100vw;
@@ -246,8 +247,6 @@ form button:hover {
 }
 
 /* TABELA */
-
-/* A tabela já estilizada pelo Bootstrap, só controlamos container */
 .tabela-scroll-container {
   max-height: calc(2 * 60px + 50px);
   overflow-y: auto;
@@ -266,6 +265,7 @@ form button:hover {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-timeline: view(block root 0% 100%);
+  color: #ffcc00;
 }
 
 @keyframes pulseGlow {
@@ -284,8 +284,8 @@ form button:hover {
 .animated-text {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #ffcc00;
   animation: fadeInUp 2s ease-in-out;
+  color: #ffcc00;
 }
 
 @keyframes fadeInUp {
