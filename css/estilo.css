@@ -210,7 +210,7 @@ form button:hover {
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 0 15px #ffcc00;
+  box-shadow: none; /* sem brilho */
 }
 
 /* TABELA COM SCROLL (2 eventos visíveis) */
