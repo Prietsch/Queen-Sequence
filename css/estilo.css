@@ -1,3 +1,4 @@
+
 /* RESET E BASE */
 * {
   margin: 0;
@@ -71,7 +72,7 @@ header.menu-sticky {
 
 /* SEÇÕES */
 
-/* Fundo cinza claro para a primeira e gradualmente mais escuro */
+/* Scroll-driven fade e slide para todas as sections */
 section.secao {
   min-height: 100vh;
   width: 100vw;
@@ -80,6 +81,7 @@ section.secao {
   align-items: center;
   justify-content: center;
   padding: 0px 20px 40px;
+  background: linear-gradient(145deg, #111, #1c1c1c);
   text-align: center;
   color: #ffcc00;
   position: relative;
@@ -92,30 +94,12 @@ section.secao {
   animation-fill-mode: forwards;
 }
 
-/* Diferentes tons de cinza por ordem */
-section#banda {
-  background: #d1d1d1; /* cinza claro */
-  color: #111;
+.secao:nth-of-type(odd) {
+  background: linear-gradient(145deg, #1c1c1c, #111);
 }
-section#discografia {
-  background: #b0b0b0;
-  color: #ffcc00;
-}
-section#formulario {
-  background: #8a8a8a;
-  color: #ffcc00;
-}
-section#painel {
-  background: #666666;
-  color: #ffcc00;
-}
-section#carrossel {
-  background: #444444;
-  color: #ffcc00;
-}
-section#animacao {
-  background: #222222;
-  color: #ffcc00;
+
+.secao:nth-of-type(even) {
+  background: linear-gradient(145deg, #111, #1c1c1c);
 }
 
 @keyframes fadeSlideIn {
@@ -169,38 +153,7 @@ section#animacao {
   box-shadow: 0 0 20px #ffcc00;
 }
 
-/* FORMULÁRIO lado a lado com imagem */
-.form-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  max-width: 900px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.form-img {
-  flex: 0 0 40%;
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #ffcc00;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.form-img:hover {
-  transform: scale(1.05);
-}
-
-.formulario {
-  flex: 0 0 55%;
-  min-width: 280px;
-  display: grid;
-  gap: 1rem;
-}
-
-/* Estilo do form */
+/* FORMULÁRIO */
 form legend {
   font-size: 1.4rem;
   color: #fff;
@@ -213,14 +166,11 @@ form .form-label {
 }
 
 form .form-control,
-form .form-select,
-form textarea {
+form .form-select {
   background-color: #222;
   color: #fff;
   border: 1px solid #ffcc00;
   border-radius: 6px;
-  padding: 0.5rem;
-  font-size: 1rem;
 }
 
 form .form-control::placeholder,
@@ -232,7 +182,6 @@ form .form-control:focus,
 form .form-select:focus {
   border-color: #fff000;
   box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
-  outline: none;
 }
 
 form button {
@@ -244,9 +193,6 @@ form button {
   padding: 10px 20px;
   transition: background-color 0.3s;
   cursor: pointer;
-  justify-self: start;
-  width: fit-content;
-  margin-top: 1rem;
 }
 
 form button:hover {
@@ -267,7 +213,6 @@ form button:hover {
 .painel-item {
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   border-radius: 10px;
   box-shadow: 0 0 10px #ffcc00;
   transition: transform 0.3s;
@@ -301,33 +246,39 @@ form button:hover {
   transform: scale(1.02);
 }
 
+/* TABELA */
+
+/* A tabela já estilizada pelo Bootstrap, só controlamos container */
+.tabela-scroll-container {
+  max-height: calc(2 * 60px + 50px);
+  overflow-y: auto;
+  border: 1px solid #ffcc00;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ffcc00;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 900px;
+}
+
 /* ANIMAÇÃO NA ÚLTIMA SEÇÃO */
 #animacao {
+  animation-name: pulseGlow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
   animation-timeline: view(block root 0% 100%);
 }
 
-/* Estrela animada */
-.estrela {
-  margin: 40px auto 0;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at center, #ffcc00 40%, transparent 70%);
-  clip-path: polygon(
-    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%,
-    21% 91%, 32% 57%, 2% 35%, 39% 35%
-  );
-  animation: pulsarGirar 4s linear infinite;
-  filter: drop-shadow(0 0 10px #ffcc00);
-}
-
-@keyframes pulsarGirar {
+@keyframes pulseGlow {
   0%, 100% {
-    transform: rotate(0deg) scale(1);
-    filter: drop-shadow(0 0 10px #ffcc00);
+    color: #ff66cc;
+    text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+    transform: scale(1);
   }
   50% {
-    transform: rotate(180deg) scale(1.1);
-    filter: drop-shadow(0 0 25px #fff100);
+    color: #ffccff;
+    text-shadow: 0 0 20px #ffccff, 0 0 30px #ffccff;
+    transform: scale(1.05);
   }
 }
 
@@ -336,7 +287,6 @@ form button:hover {
   margin-bottom: 20px;
   color: #ffcc00;
   animation: fadeInUp 2s ease-in-out;
-  text-shadow: 0 0 10px #ffcc00;
 }
 
 @keyframes fadeInUp {
@@ -382,7 +332,6 @@ footer {
 @media (max-width: 768px) {
   #banda h1 {
     font-size: 2rem;
-    color: #111;
   }
 
   .secao2 h2 {
@@ -401,16 +350,6 @@ footer {
 
   .painel-mosaico {
     grid-template-columns: 1fr 1fr;
-  }
-
-  /* Formulário fica em coluna */
-  .form-container {
-    flex-direction: column;
-  }
-  .form-img,
-  .formulario {
-    flex: 1 1 100%;
-    max-width: 100%;
   }
 }
 
