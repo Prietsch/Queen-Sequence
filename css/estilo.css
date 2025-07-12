@@ -1,0 +1,244 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Russo One', sans-serif;
+  background: #000;
+  color: #fff;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* MAIN deve crescer para ocupar espaço e empurrar footer */
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER - sticky no topo */
+header.menu-sticky {
+  position: sticky;
+  top: 0;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(255,204,0,0.5);
+}
+
+/* NAV */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #ffcc00;
+  color: #000;
+  outline: none;
+}
+/* Estilo geral para todas as imagens */
+img {
+  width: 90%;
+  max-width: 400px; /* limite máximo menor para reduzir tamanho */
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ffcc00;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Logo */
+
+.logo img {
+  max-height: 50px;
+  width: auto;
+  box-shadow: none; 
+}
+
+/* SECTIONS */
+.secao {
+  min-height: 100vh; /* uma tela cheia */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #111;
+  text-align: center;
+}
+
+/* section 1 - #banda */
+#banda {
+  background-color: #222; /* cinza escuro diferente do header e secao 2 */
+}
+
+#banda h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffcc00;
+}
+
+#banda p {
+  max-width: 600px;
+  font-size: 1.2rem;
+  margin: 0 auto 30px;
+  line-height: 1.5;
+  color: #eee;
+}
+
+#banda img {
+  max-width: 40%;       /* reduziu de 60% para 40% */
+  max-height: 350px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ffcc00;
+  margin: 20px auto 0 auto;
+  display: block;
+}
+
+/* section 2 - #discografia */
+.secao2 {
+  background-color: #333; /* outro tom de cinza */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px 80px; /* mais espaço embaixo para o footer */
+  min-height: 100vh;
+  text-align: center;
+  gap: 25px;
+}
+
+.secao2 .conteudo {
+  max-width: 650px;
+  color: #eee;
+}
+
+.secao2 h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+.secao2 p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.secao2 ul {
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto 25px;
+  list-style-type: disc;
+  color: #ddd;
+  padding-left: 20px;
+}
+
+.secao2 ul li {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.secao2 img {
+  max-width: 60%;
+  max-height: 350px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ffcc00;
+  margin: 20px auto 0 auto;
+  display: block;
+}
+
+/* FOOTER */
+footer {
+  background-color: #111;
+  color: #ffcc00;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 1rem;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 5px rgba(255,204,0,0.3);
+}
+
+/* Responsividade para telas até 768px */
+@media (max-width: 768px) {
+  #banda h1 {
+    font-size: 2rem;
+  }
+
+  .secao2 h2 {
+    font-size: 1.6rem;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+
+  .secao2 ul {
+    max-width: 100%;
+  }
+
+  /* Imagem da seção #banda menor que a da secao2 */
+  #banda img {
+    max-width: 70%;       /* menor que 90% da secao2 */
+    max-height: 250px;
+  }
+
+  .secao2 img {
+    max-width: 90%;
+    max-height: 250px;
+  }
+}
+
+/* Responsividade para telas até 480px */
+@media (max-width: 480px) {
+  #banda p,
+  .secao2 p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Imagem da seção #banda menor que a da secao2 */
+  #banda img {
+    max-width: 90%;
+    max-height: 180px;
+  }
+
+  .secao2 img {
+    max-width: 100%;
+    max-height: 180px;
+  }
+}
