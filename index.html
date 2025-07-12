@@ -1,19 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Queen - A Lenda do Rock</title>
-
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-
+  
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Link externo para CSS -->
-  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Seu CSS -->
+  <link rel="stylesheet" href="./css/estilo.css" />
 </head>
 <body>
 
@@ -44,7 +45,7 @@
     <section id="banda" class="secao">
       <h1>Queen: A Lenda do Rock</h1>
       <p>Formada em 1970, Queen é uma das maiores bandas da história da música. Com Freddie Mercury nos vocais, Brian May na guitarra, Roger Taylor na bateria e John Deacon no baixo, o grupo marcou gerações com seu som único e performances icônicas.</p>
-      <img src="./img/queen.jpg" alt="Banda Queen em apresentação ao vivo" loading="lazy" width="600" height="400"/>
+      <img src="./img/queen.jpg" alt="Banda Queen em apresentação ao vivo" loading="lazy" />
     </section>
 
     <!-- 2. Discografia -->
@@ -58,37 +59,33 @@
           <li><strong>Jazz</strong> (1978)</li>
           <li><strong>The Game</strong> (1980)</li>
         </ul>
-        <img src="./img/discos.jpg" alt="Capa de discos clássicos do Queen" loading="lazy" width="600" height="400"/>
+        <img src="./img/discos.jpg" alt="Capa de discos clássicos do Queen" loading="lazy" />
       </div>
     </section>
 
     <!-- 3. Formulário -->
     <section id="formulario" class="secao">
-      <div class="form-container">
-        <img
-          src="./img/queen_forms.jpg"
-          alt="Queen"
-          loading="lazy"
-          width="500"
-          height="333"
-          class="form-img"
-        />
-        <form class="formulario" novalidate>
+      <div class="container d-flex flex-wrap align-items-center justify-content-center">
+        <picture class="col-md-6">
+          <source srcset="./img/queen.webp" type="image/webp" />
+          <img src="./img/queen_forms.jpg" alt="Queen" class="img-fluid rounded" loading="lazy" />
+        </picture>
+        <form class="col-md-6 p-4">
           <fieldset>
             <legend>Fale conosco</legend>
-            <div>
+            <div class="mb-3">
               <label for="nome" class="form-label">Nome:</label>
               <input type="text" class="form-control" id="nome" required />
             </div>
-            <div>
+            <div class="mb-3">
               <label for="email" class="form-label">Email:</label>
               <input type="email" class="form-control" id="email" required />
             </div>
-            <div>
+            <div class="mb-3">
               <label for="nascimento" class="form-label">Data de nascimento:</label>
               <input type="date" class="form-control" id="nascimento" />
             </div>
-            <div>
+            <div class="mb-3">
               <label for="genero" class="form-label">Gênero musical favorito:</label>
               <select class="form-select" id="genero">
                 <option>Rock</option>
@@ -96,11 +93,11 @@
                 <option>Clássico</option>
               </select>
             </div>
-            <div>
+            <div class="mb-3">
               <label for="mensagem" class="form-label">Mensagem:</label>
               <textarea class="form-control" id="mensagem" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
           </fieldset>
         </form>
       </div>
@@ -109,35 +106,67 @@
     <!-- 4. Painel de Fotos -->
     <section id="painel" class="secao">
       <h2>Painel de Fotos</h2>
-      <div class="painel-mosaico" role="list">
-        <div class="painel-item" style="background-image:url('./img/painel1.jpg')" role="listitem" aria-label="Foto da banda em show"></div>
-        <div class="painel-item" style="background-image:url('./img/painel2.jpg')" role="listitem" aria-label="Freddie Mercury cantando"></div>
-        <div class="painel-item" style="background-image:url('./img/painel3.jpg')" role="listitem" aria-label="Brian May tocando guitarra"></div>
-        <div class="painel-item" style="background-image:url('./img/painel4.jpg')" role="listitem" aria-label="Roger Taylor na bateria"></div>
-        <div class="painel-item" style="background-image:url('./img/painel5.jpg')" role="listitem" aria-label="John Deacon no baixo"></div>
-        <div class="painel-item" style="background-image:url('./img/painel6.jpg')" role="listitem" aria-label="Multidão no show do Queen"></div>
+      <div class="painel-mosaico">
+        <div class="painel-item" style="background-image: url('./img/queen1.jpg');"></div>
+        <div class="painel-item" style="background-image: url('./img/queen2.jpg');"></div>
+        <div class="painel-item" style="background-image: url('./img/queen3.jpg');"></div>
+        <div class="painel-item" style="background-image: url('./img/queen4.jpg');"></div>
+        <div class="painel-item" style="background-image: url('./img/queen5.jpg');"></div>
+        <div class="painel-item" style="background-image: url('./img/queen6.jpg');"></div>
       </div>
     </section>
 
-    <!-- 5. Carrossel -->
+    <!-- 5. Carrossel + Tabela -->
     <section id="carrossel" class="secao">
-      <h2>Carrossel de Momentos</h2>
-      <div id="carouselQueen" class="carousel slide mx-auto" style="max-width:700px;" data-bs-ride="carousel" aria-label="Carrossel de imagens da banda Queen">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./img/carrossel1.jpg" class="d-block w-100" alt="Freddie Mercury em performance" loading="lazy" />
+      <h2>Momentos Marcantes</h2>
+
+      <div class="tabela-scroll-container">
+        <table class="table table-striped table-hover table-dark tabela-eventos">
+          <thead>
+            <tr><th>Ano</th><th>Evento</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1973</td><td>Lançamento do primeiro álbum "Queen"</td></tr>
+            <tr><td>1975</td><td>Lançamento de "Bohemian Rhapsody"</td></tr>
+            <tr><td>1981</td><td>Turnê mundial "The Game Tour"</td></tr>
+            <tr><td>1985</td><td>Apresentação histórica no Live Aid</td></tr>
+            <tr><td>1991</td><td>Falecimento de Freddie Mercury</td></tr>
+            <tr><td>2005</td><td>Turnê com Paul Rodgers</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./img/queen.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/discos.jpg" class="d-block w-100" alt="Discos Queen" loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/queen1.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/queen2.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/queen3.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/queen4.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/queen5.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/queen6.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" />
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="./img/carrossel2.jpg" class="d-block w-100" alt="Show ao ar livre do Queen" loading="lazy" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/carrossel3.jpg" class="d-block w-100" alt="Brian May solo de guitarra" loading="lazy" />
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselQueen" data-bs-slide="prev" aria-label="Anterior">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselQueen" data-bs-slide="next" aria-label="Próximo">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
           <span class="carousel-control-next-icon"></span>
         </button>
       </div>
@@ -145,21 +174,17 @@
 
     <!-- 6. Animação -->
     <section id="animacao" class="secao">
-      <div class="animated-text">Queen - Estrela que Nunca Para de Brilhar</div>
-      <div class="estrela" role="img" aria-label="Estrela animada pulsante e giratória"></div>
-      <div class="transition-box" tabindex="0" role="button" aria-pressed="false">
-        Clique aqui para sentir a energia da banda!
-      </div>
+      <h2 class="animated-text">Obrigado por visitar!</h2>
+      <div class="transition-box">Passe o mouse aqui!</div>
     </section>
 
   </main>
 
-  <footer>
-    &copy; 2025 Queen Tribute. Todos os direitos reservados.
+  <footer class="text-center p-3 bg-dark text-light">
+    <p>&copy; 2025 - Tributo ao Queen</p>
   </footer>
 
-  <!-- Bootstrap JS (popper + bundle) -->
+  <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
