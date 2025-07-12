@@ -15,6 +15,7 @@ html, body {
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
+  padding-top: 70px;
 }
 
 main {
@@ -204,31 +205,35 @@ form button:hover {
   transform: scale(1.03);
 }
 
-/* TABELA COM SCROLL E CABEÇALHO FIXO */
+/* CARROSSEL */
+.carousel-inner img {
+  max-height: 400px; /* limite de altura */
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ffcc00;
+}
+
+/* TABELA NORMAL */
 .tabela-eventos {
   width: 100%;
   max-width: 900px;
   margin: 40px auto;
   padding: 10px;
-  max-height: 200px;      /* Altura máxima para mostrar 3 eventos */
-  overflow-y: auto;       /* Scroll vertical ativado */
-  border-radius: 8px;
-  box-shadow: 0 0 15px #ffcc00;
-  background-color: #222;
 }
 
 .tabela-eventos table {
-  width: 100%;
-  border-collapse: collapse;
+  background-color: #222;
   color: #ffcc00;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #ffcc00;
+  width: 100%;
 }
 
 .tabela-eventos thead {
   background-color: #ffcc00;
   color: #000;
-  position: sticky;       /* Cabeçalho fixo */
-  top: 0;
-  z-index: 10;
 }
 
 .tabela-eventos th,
@@ -236,7 +241,6 @@ form button:hover {
   padding: 12px 16px;
   border-bottom: 1px solid #444;
   text-align: left;
-  white-space: nowrap;
 }
 
 /* ANIMAÇÃO */
