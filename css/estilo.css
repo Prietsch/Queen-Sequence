@@ -26,6 +26,7 @@ main {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
+  padding-top: 70px;
 }
 
 img {
@@ -165,7 +166,6 @@ section.secao {
   transform: rotate(-10deg);
 }
 
-/* Legenda */
 .legenda-tributo {
   margin-top: 10px;
   font-family: 'Roboto', sans-serif;
@@ -299,22 +299,78 @@ form button:hover {
   box-shadow: 0 0 15px #ffd700;
 }
 
+/* TABELA */
+.tabela-scroll-container {
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.tabela-eventos {
+  min-width: 320px;
+  font-size: 0.9rem;
+}
+
+/* CARROSSEL */
+.carousel-inner img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* BOTÃO SPOTIFY */
+.btn-video {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #ffcc00;
+  color: #000;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-video:hover {
+  background-color: #e6b800;
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
-  .painel-mosaico {
-    grid-template-columns: 1fr 1fr;
+  #formulario .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #formulario picture,
+  #formulario form {
+    width: 100%;
+    padding: 0;
   }
 }
 
 @media (max-width: 480px) {
+  section.secao {
+    padding: 20px 10px 40px;
+  }
+
+  .secao2 ul {
+    padding-left: 16px;
+  }
+
+  .secao2 img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .painel-mosaico {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
     padding: 10px;
   }
 
   .painel-item {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1 / 1;
+    min-height: 120px;
     border-radius: 6px;
     box-shadow: 0 0 5px #ffcc00;
   }
@@ -342,7 +398,16 @@ form button:hover {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 395px) {
+  .painel-mosaico {
+    grid-template-columns: 1fr;
+  }
+
+  .painel-item {
+    aspect-ratio: 16 / 9;
+    min-height: unset;
+  }
+
   #banda .char {
     font-size: clamp(1.5rem, 18vw, 3rem);
   }
@@ -366,6 +431,11 @@ form button:hover {
   }
 
   form button {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+
+  .btn-video {
     font-size: 0.95rem;
     padding: 8px 16px;
   }
