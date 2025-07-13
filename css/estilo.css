@@ -87,7 +87,7 @@ section.secao {
   opacity: 0;
   transform: translateY(40px);
   animation: fadeSlideIn 1s forwards;
-  animation-timeline: view(block root 0% 80%);
+  /* REMOVIDO animation-timeline */
 }
 
 .secao:nth-of-type(odd) {
@@ -129,7 +129,7 @@ section.secao {
   font-weight: 900;
   user-select: none;
   flex: none;
-  transition: 0.3s ease-in-out;
+  transition: transform 0.4s ease;
   display: inline-block;
 }
 
@@ -260,7 +260,6 @@ section.secao {
     gap: 20px;
   }
 
-  #formulario picture,
   #formulario form {
     width: 100%;
     padding: 0;
@@ -342,8 +341,4 @@ section.secao {
 }
 #banda .word:hover .char:nth-child(5) {
   transform: rotate(-10deg) translateY(-30px);
-}
-
-#banda .char {
-  transition: transform 0.4s ease;
 }
