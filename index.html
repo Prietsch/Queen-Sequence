@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +12,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- CSS Separado -->
+  <!-- CSS Personalizado -->
   <link rel="stylesheet" href="./css/estilo.css" />
 </head>
 <body>
@@ -23,7 +21,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Queen</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menu de navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -64,7 +62,7 @@
           <li><strong>Jazz</strong> (1978)</li>
           <li><strong>The Game</strong> (1980)</li>
         </ul>
-        <img src="./img/discos.webp" alt="Capa de discos clássicos do Queen" loading="lazy" />
+        <img src="./img/discos.webp" alt="Capas de discos clássicos do Queen" loading="lazy" />
       </div>
     </section>
 
@@ -73,7 +71,7 @@
       <div class="container d-flex flex-wrap align-items-center justify-content-center">
         <picture class="col-md-6">
           <source srcset="./img/queen_forms.webp" type="image/webp" />
-          <img src="./img/queen_forms.jpg" alt="Queen" class="img-fluid rounded" loading="lazy" />
+          <img src="./img/queen_forms.jpg" alt="Imagem da banda Queen" class="img-fluid rounded" loading="lazy" />
         </picture>
         <form class="col-md-6 p-4">
           <fieldset>
@@ -126,7 +124,9 @@
       <h2>Momentos Marcantes</h2>
       <div class="tabela-scroll-container">
         <table class="table table-striped table-hover table-dark tabela-eventos">
-          <thead><tr><th>Ano</th><th>Evento</th></tr></thead>
+          <thead>
+            <tr><th>Ano</th><th>Evento</th></tr>
+          </thead>
           <tbody>
             <tr><td>1973</td><td>Lançamento do primeiro álbum "Queen"</td></tr>
             <tr><td>1975</td><td>Lançamento de "Bohemian Rhapsody"</td></tr>
@@ -137,22 +137,27 @@
           </tbody>
         </table>
       </div>
+
       <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active"><img src="./img/queen.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/discos.jpg" class="d-block w-100" alt="Discos Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen1.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen2.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen3.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen4.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen5.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen6.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
+          <div class="carousel-item active"><img src="./img/queen.jpg" class="d-block w-100" alt="Show do Queen ao vivo" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/discos.jpg" class="d-block w-100" alt="Discos da banda Queen" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen1.jpg" class="d-block w-100" alt="Imagem Queen 1" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen2.jpg" class="d-block w-100" alt="Imagem Queen 2" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen3.jpg" class="d-block w-100" alt="Imagem Queen 3" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen4.jpg" class="d-block w-100" alt="Imagem Queen 4" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen5.jpg" class="d-block w-100" alt="Imagem Queen 5" loading="lazy" /></div>
+          <div class="carousel-item"><img src="./img/queen6.jpg" class="d-block w-100" alt="Imagem Queen 6" loading="lazy" /></div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
+
+        <!-- Botões corrigidos -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" aria-label="Slide anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" aria-label="Próximo slide">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
         </button>
       </div>
     </section>
@@ -160,7 +165,7 @@
     <!-- 6. Spotify -->
     <section id="animacao">
       <h2>Ouça a Playlist do Queen</h2>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0ENBD2?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0ENBD2?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0ENBD2?si=lgivheQ8RIa43wn4oNvU4w" target="_blank" class="btn-video">Abrir no Spotify</a>
     </section>
   </main>
@@ -169,7 +174,7 @@
     <p>&copy; 2025 - Tributo ao Queen</p>
   </footer>
 
-  <!-- Bootstrap Bundle JS -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
