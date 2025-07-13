@@ -1,5 +1,4 @@
 
-
 /* RESET E BASE */
 * {
   margin: 0;
@@ -92,32 +91,17 @@ section.secao {
   animation-fill-mode: forwards;
 }
 
-.secao:nth-of-type(odd) {
-  background: linear-gradient(145deg, #1c1c1c, #111);
-}
-
-.secao:nth-of-type(even) {
-  background: linear-gradient(145deg, #111, #1c1c1c);
-}
-
-@keyframes fadeSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* SEÇÃO #banda */
+/* Seção 1 animada - conceito OCEAN adaptado para QUEEN */
 #banda {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/queen.webp') no-repeat center center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/queen.webp') no-repeat center center;
   background-size: cover;
   color: #ffcc00;
-  text-shadow: 1px 1px 3px #000;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
   text-transform: uppercase;
   overflow: hidden;
   position: relative;
-  padding: 0 20px;
-  height: 100vh;
+  padding: 80px 20px 40px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,17 +112,13 @@ section.secao {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 400px;
   max-width: 90vw;
-  height: 120px;
-  cursor: pointer;
   flex-wrap: wrap;
 }
 
 #banda .char {
   flex: 1;
-  position: relative;
-  font-size: clamp(2.5rem, 16vw, 8rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   font-weight: 900;
   font-family: 'Russo One', sans-serif;
   transition: 0.3s ease-in-out;
@@ -178,102 +158,27 @@ section.secao {
   user-select: none;
 }
 
-/* SEÇÃO 2 - Discografia */
-.secao2 {
-  padding: 80px 20px 40px;
-  width: 100vw;
-  margin: 0;
-  max-width: none;
-  text-align: center;
-  gap: 25px;
-  color: #ffcc00;
+.secao:nth-of-type(odd) {
+  background: linear-gradient(145deg, #1c1c1c, #111);
 }
 
-.secao2 h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #ffcc00;
+.secao:nth-of-type(even) {
+  background: linear-gradient(145deg, #111, #1c1c1c);
 }
 
-.secao2 p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  line-height: 1.4;
-  color: #ddd;
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.secao2 ul {
-  text-align: left;
-  max-width: 400px;
-  margin: 0 auto 25px;
-  list-style-type: disc;
-  color: #ddd;
-  padding-left: 20px;
-}
-
-.secao2 ul li {
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.secao2 img {
-  max-width: 60%;
-  max-height: 350px;
-  box-shadow: 0 0 20px #ffcc00;
-}
-
-/* FORMULÁRIO */
-form legend {
-  font-size: 1.4rem;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-form .form-label {
-  color: #fff;
-  font-size: 1rem;
-}
-
-form .form-control,
-form .form-select {
-  background-color: #222;
-  color: #fff;
-  border: 1px solid #ffcc00;
-  border-radius: 6px;
-}
-
-form .form-control::placeholder,
-form .form-select option {
-  color: #ccc;
-}
-
-form .form-control:focus,
-form .form-select:focus {
-  border-color: #fff000;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
-}
-
-form button {
-  font-weight: bold;
-  background-color: #ffcc00;
-  color: #000;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #e6b800;
-}
-
-/* PAINEL DE FOTOS */
+/* PAINEL DE FOTOS - AJUSTADO E RESPONSIVO */
 .painel-mosaico {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -282,93 +187,48 @@ form button:hover {
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  box-shadow: 0 0 10px #ffcc00;
+  box-shadow: 0 0 8px #ffcc00;
   transition: transform 0.3s;
   cursor: pointer;
   aspect-ratio: 1 / 1;
-}
-
-.painel-item:nth-child(2n) {
-  grid-row: span 2;
-}
-
-.painel-item:nth-child(3n) {
-  grid-column: span 2;
+  min-height: 100px;
 }
 
 .painel-item:hover {
   transform: scale(1.05) rotate(1deg);
-  box-shadow: 0 0 15px #ffd700;
+  box-shadow: 0 0 12px #ffd700;
 }
 
-/* RESPONSIVO */
 @media (max-width: 768px) {
   .painel-mosaico {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .painel-item {
+    min-height: 80px;
   }
 }
 
 @media (max-width: 480px) {
   .painel-mosaico {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 5px;
+  }
+
+  .painel-item {
+    min-height: 70px;
+  }
+}
+
+@media (max-width: 395px) {
+  .painel-mosaico {
     grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 10px;
   }
 
   .painel-item {
     aspect-ratio: 16 / 9;
-    border-radius: 6px;
-    box-shadow: 0 0 5px #ffcc00;
-  }
-
-  #banda .char {
-    font-size: clamp(2rem, 16vw, 4rem);
-  }
-
-  .legenda-tributo {
-    font-size: 1rem;
-  }
-
-  .secao2 h2 {
-    font-size: 1.4rem;
-  }
-
-  .secao2 p,
-  .secao2 ul li {
-    font-size: 1rem;
-  }
-
-  form legend,
-  form .form-label {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 375px) {
-  #banda .char {
-    font-size: clamp(1.5rem, 18vw, 3rem);
-  }
-
-  .secao2 h2 {
-    font-size: 1.3rem;
-  }
-
-  .secao2 p,
-  .secao2 ul li {
-    font-size: 0.95rem;
-  }
-
-  .legenda-tributo {
-    font-size: 0.9rem;
-  }
-
-  form legend,
-  form .form-label {
-    font-size: 0.9rem;
-  }
-
-  form button {
-    font-size: 0.95rem;
-    padding: 8px 16px;
+    min-height: unset;
   }
 }
