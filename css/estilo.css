@@ -91,32 +91,17 @@ section.secao {
   animation-fill-mode: forwards;
 }
 
-.secao:nth-of-type(odd) {
-  background: linear-gradient(145deg, #1c1c1c, #111);
-}
-
-.secao:nth-of-type(even) {
-  background: linear-gradient(145deg, #111, #1c1c1c);
-}
-
-@keyframes fadeSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* SEÇÃO #banda */
+/* Seção 1 animada - conceito OCEAN adaptado para QUEEN */
 #banda {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/queen.webp') no-repeat center center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/queen.webp') no-repeat center center;
   background-size: cover;
   color: #ffcc00;
-  text-shadow: 1px 1px 3px #000;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
   text-transform: uppercase;
   overflow: hidden;
   position: relative;
-  padding: 0 20px;
-  height: 100vh;
+  padding: 80px 20px 40px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,17 +112,13 @@ section.secao {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 400px;
   max-width: 90vw;
-  height: 120px;
-  cursor: pointer;
   flex-wrap: wrap;
 }
 
 #banda .char {
   flex: 1;
-  position: relative;
-  font-size: clamp(2.5rem, 16vw, 8rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   font-weight: 900;
   font-family: 'Russo One', sans-serif;
   transition: 0.3s ease-in-out;
@@ -177,7 +158,22 @@ section.secao {
   user-select: none;
 }
 
-/* SEÇÃO 2 - Discografia */
+.secao:nth-of-type(odd) {
+  background: linear-gradient(145deg, #1c1c1c, #111);
+}
+
+.secao:nth-of-type(even) {
+  background: linear-gradient(145deg, #111, #1c1c1c);
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SEÇÃO 2 */
 .secao2 {
   padding: 80px 20px 40px;
   width: 100vw;
@@ -267,10 +263,11 @@ form button:hover {
   background-color: #e6b800;
 }
 
-/* PAINEL DE FOTOS */
+/* PAINEL */
 .painel-mosaico {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: 150px;
   gap: 10px;
   max-width: 1200px;
   margin: 0 auto;
@@ -284,7 +281,6 @@ form button:hover {
   box-shadow: 0 0 10px #ffcc00;
   transition: transform 0.3s;
   cursor: pointer;
-  aspect-ratio: 1 / 1;
 }
 
 .painel-item:nth-child(2n) {
@@ -300,74 +296,139 @@ form button:hover {
   box-shadow: 0 0 15px #ffd700;
 }
 
+/* CARROSSEL */
+.carousel-inner img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+.carousel-inner img:hover {
+  transform: scale(1.02);
+}
+
+/* TABELA */
+.tabela-scroll-container {
+  max-height: calc(2 * 60px + 50px);
+  overflow-y: auto;
+  border: 1px solid #ffcc00;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ffcc00;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* SEÇÃO FINAL - SPOTIFY */
+#animacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 20px;
+  background: linear-gradient(145deg, #222, #111);
+  color: #ffcc00;
+  min-height: 100vh;
+  text-align: center;
+}
+
+#animacao h2 {
+  font-size: 2.5rem;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+#animacao iframe {
+  max-width: 600px;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  transition: none;
+}
+
+/* BOTÃO SPOTIFY */
+.btn-video {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.25rem;
+  color: #000;
+  background: #1db954;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 10px #1db954;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-video:hover,
+.btn-video:focus {
+  background: #1ed760;
+  box-shadow: 0 0 25px #1ed760;
+  transform: scale(1.08);
+  outline: none;
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(to right, #111, #222);
+  color: #ffcc00;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 1rem;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 10px #ffcc00;
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
+  #banda h1 {
+    font-size: 2rem;
+  }
+
+  .secao2 h2 {
+    font-size: 1.6rem;
+  }
+
+  .secao2 ul {
+    max-width: 100%;
+  }
+
+  #banda img,
+  .secao2 img {
+    max-width: 90%;
+    max-height: 250px;
+  }
+
   .painel-mosaico {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 480px) {
+  #banda p,
+  .secao2 p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #banda img,
+  .secao2 img {
+    max-width: 100%;
+    max-height: 180px;
+  }
+
   .painel-mosaico {
     grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 10px;
-  }
-
-  .painel-item {
-    aspect-ratio: 16 / 9;
-    border-radius: 6px;
-    box-shadow: 0 0 5px #ffcc00;
-  }
-
-  #banda .char {
-    font-size: clamp(2rem, 16vw, 4rem);
-  }
-
-  .legenda-tributo {
-    font-size: 1rem;
-  }
-
-  .secao2 h2 {
-    font-size: 1.4rem;
-  }
-
-  .secao2 p,
-  .secao2 ul li {
-    font-size: 1rem;
-  }
-
-  form legend,
-  form .form-label {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 375px) {
-  #banda .char {
-    font-size: clamp(1.5rem, 18vw, 3rem);
-  }
-
-  .secao2 h2 {
-    font-size: 1.3rem;
-  }
-
-  .secao2 p,
-  .secao2 ul li {
-    font-size: 0.95rem;
-  }
-
-  .legenda-tributo {
-    font-size: 0.9rem;
-  }
-
-  form legend,
-  form .form-label {
-    font-size: 0.9rem;
-  }
-
-  form button {
-    font-size: 0.95rem;
-    padding: 8px 16px;
   }
 }
