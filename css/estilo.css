@@ -106,7 +106,7 @@ section.secao {
 
 /* SEÇÃO #banda */
 #banda {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/queen(1).webp') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/queen (1).webp') no-repeat center center;
   background-size: cover;
   color: #ffcc00;
   text-shadow: 1px 1px 3px #000;
