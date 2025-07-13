@@ -9,14 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap (CDN otimizado) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- CSS Separado -->
-  <link rel="stylesheet" href="./css/estilo.css" />
+  <!-- CSS Customizado -->
+  <link rel="stylesheet" href="./css/estilo.min.css" />
 </head>
 <body>
-
   <header class="menu-sticky">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -39,11 +38,8 @@
   </header>
 
   <main>
-    <!-- 1. Banda -->
     <section id="banda" class="secao concept-six">
-      <!-- Heading principal oculto para acessibilidade e validação -->
       <h1 class="visually-hidden">Queen - A Lenda do Rock</h1>
-
       <div class="word">
         <span class="char">Q</span>
         <span class="char">U</span>
@@ -54,7 +50,6 @@
       <p class="legenda-tributo">Um tributo</p>
     </section>
 
-    <!-- 2. Discografia -->
     <section id="discografia" class="secao secao2">
       <div class="conteudo">
         <h2>Discografia Marcante</h2>
@@ -69,7 +64,6 @@
       </div>
     </section>
 
-    <!-- 3. Formulário -->
     <section id="formulario" class="secao">
       <div class="container d-flex flex-wrap align-items-center justify-content-center">
         <picture class="col-md-6">
@@ -109,7 +103,6 @@
       </div>
     </section>
 
-    <!-- 4. Painel -->
     <section id="painel" class="secao">
       <h2>Painel de Fotos</h2>
       <div class="painel-mosaico">
@@ -122,7 +115,6 @@
       </div>
     </section>
 
-    <!-- 5. Carrossel + Tabela -->
     <section id="carrossel" class="secao">
       <h2>Momentos Marcantes</h2>
       <div class="tabela-scroll-container">
@@ -142,26 +134,21 @@
         <div class="carousel-inner">
           <div class="carousel-item active"><img src="./img/queen.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
           <div class="carousel-item"><img src="./img/discos.jpg" class="d-block w-100" alt="Discos Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen1.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen2.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen3.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen4.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen5.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
-          <div class="carousel-item"><img src="./img/queen6.jpg" class="d-block w-100" alt="Show Queen" loading="lazy" /></div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" aria-label="Anterior" title="Anterior">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" aria-label="Próximo" title="Próximo">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
         </button>
       </div>
     </section>
 
-    <!-- 6. Spotify -->
     <section id="animacao">
       <h2>Ouça a Playlist do Queen</h2>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0ENBD2?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe title="Playlist do Queen no Spotify" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0ENBD2?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0ENBD2?si=lgivheQ8RIa43wn4oNvU4w" target="_blank" class="btn-video">Abrir no Spotify</a>
     </section>
   </main>
@@ -171,6 +158,6 @@
   </footer>
 
   <!-- Bootstrap Bundle JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
