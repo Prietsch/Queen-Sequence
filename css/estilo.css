@@ -130,6 +130,7 @@ section.secao {
   user-select: none;
   flex: none;
   transition: 0.3s ease-in-out;
+  display: inline-block;
 }
 
 .legenda-tributo {
@@ -148,9 +149,11 @@ section.secao {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-auto-rows: 150px;
   gap: 16px;
-  max-width: 1100px;
+  max-width: 100vw;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .painel-item {
@@ -162,6 +165,7 @@ section.secao {
   cursor: pointer;
 }
 
+/* spans para destaque */
 .painel-item:nth-child(2n) {
   grid-row: span 2;
 }
@@ -249,23 +253,7 @@ section.secao {
   }
 }
 
-@media (max-width: 480px) {
-  #animacao iframe {
-    height: 260px;
-  }
-}
-
-/* BOTÃO SPOTIFY ANIMAÇÃO */
-@keyframes bounce {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-6px);
-  }
-}
-
-/* RESPONSIVO */
+/* RESPONSIVO GERAL */
 @media (max-width: 768px) {
   #formulario .container {
     flex-direction: column;
@@ -278,64 +266,84 @@ section.secao {
     padding: 0;
   }
 
-  .painel-mosaico {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
   #banda .char {
     font-size: clamp(2rem, 14vw, 6rem);
   }
 }
 
-@media (max-width: 480px) {
-  section.secao {
-    padding: 20px 10px 40px;
+/* RESPONSIVO ESPECÍFICO DO PAINEL */
+
+/* Abaixo de 1030px: só reduz tamanho, mantém estrutura e spans */
+@media (max-width: 1030px) {
+  .painel-mosaico {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-auto-rows: 120px;
+    gap: 12px;
+    padding: 16px;
+    max-width: 100vw;
   }
 
-  .painel-item {
-    min-height: 120px;
+  .painel-item:nth-child(2n) {
+    grid-row: span 2;
   }
 
-  #banda .char {
-    font-size: clamp(1.5rem, 18vw, 4rem);
-  }
-
-  .btn-video {
-    font-size: 0.95rem;
-    padding: 8px 20px;
-  }
-
-  .tabela-scroll-container {
-    max-height: 170px;
-  }
-
-  #animacao iframe {
-    height: 260px;
+  .painel-item:nth-child(3n) {
+    grid-column: span 2;
   }
 }
 
+/* Abaixo de 768px: reduz ainda mais, mantém spans */
+@media (max-width: 768px) {
+  .painel-mosaico {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-auto-rows: 100px;
+    gap: 10px;
+    padding: 12px;
+    max-width: 100vw;
+  }
 
+  .painel-item:nth-child(2n) {
+    grid-row: span 2;
+  }
+
+  .painel-item:nth-child(3n) {
+    grid-column: span 2;
+  }
+}
+
+/* Abaixo de 480px: layout simples, remove spans para melhor adaptação */
+@media (max-width: 480px) {
+  .painel-mosaico {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-auto-rows: 80px;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .painel-item:nth-child(2n),
+  .painel-item:nth-child(3n) {
+    grid-row: span 1 !important;
+    grid-column: span 1 !important;
+  }
+}
+
+/* ANIMAÇÃO DAS LETRAS */
 #banda .word:hover .char:nth-child(1) {
   transform: rotate(-20deg) translateY(-20px);
 }
-
 #banda .word:hover .char:nth-child(2) {
   transform: rotate(10deg) translateY(-30px);
 }
-
 #banda .word:hover .char:nth-child(3) {
   transform: rotate(-5deg) translateY(15px);
 }
-
 #banda .word:hover .char:nth-child(4) {
   transform: rotate(5deg) translateY(-25px);
 }
-
 #banda .word:hover .char:nth-child(5) {
   transform: rotate(-10deg) translateY(-30px);
 }
 
 #banda .char {
   transition: transform 0.4s ease;
-  display: inline-block;
 }
