@@ -84,10 +84,14 @@ section.secao {
   text-align: center;
   color: #ffcc00;
   position: relative;
+
   opacity: 0;
   transform: translateY(40px);
-  animation: fadeSlideIn 1s forwards;
-  /* REMOVIDO animation-timeline */
+  animation: fadeSlideIn 0.7s ease forwards;
+  animation-delay: 0.3s;
+
+  /* Dica para o navegador otimizar */
+  will-change: opacity, transform;
 }
 
 .secao:nth-of-type(odd) {
@@ -131,6 +135,24 @@ section.secao {
   flex: none;
   transition: transform 0.4s ease;
   display: inline-block;
+  will-change: transform;
+}
+
+/* Hover animado letras */
+#banda .word:hover .char:nth-child(1) {
+  transform: rotate(-20deg) translateY(-20px);
+}
+#banda .word:hover .char:nth-child(2) {
+  transform: rotate(10deg) translateY(-30px);
+}
+#banda .word:hover .char:nth-child(3) {
+  transform: rotate(-5deg) translateY(15px);
+}
+#banda .word:hover .char:nth-child(4) {
+  transform: rotate(5deg) translateY(-25px);
+}
+#banda .word:hover .char:nth-child(5) {
+  transform: rotate(-10deg) translateY(-30px);
 }
 
 .legenda-tributo {
@@ -260,6 +282,7 @@ section.secao {
     gap: 20px;
   }
 
+  #formulario picture,
   #formulario form {
     width: 100%;
     padding: 0;
@@ -324,21 +347,4 @@ section.secao {
     grid-row: span 1 !important;
     grid-column: span 1 !important;
   }
-}
-
-/* ANIMAÇÃO DAS LETRAS */
-#banda .word:hover .char:nth-child(1) {
-  transform: rotate(-20deg) translateY(-20px);
-}
-#banda .word:hover .char:nth-child(2) {
-  transform: rotate(10deg) translateY(-30px);
-}
-#banda .word:hover .char:nth-child(3) {
-  transform: rotate(-5deg) translateY(15px);
-}
-#banda .word:hover .char:nth-child(4) {
-  transform: rotate(5deg) translateY(-25px);
-}
-#banda .word:hover .char:nth-child(5) {
-  transform: rotate(-10deg) translateY(-30px);
 }
