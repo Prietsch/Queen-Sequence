@@ -1,4 +1,3 @@
-
 /* RESET E BASE */
 * {
   margin: 0;
@@ -71,7 +70,7 @@ header.menu-sticky {
   color: #000;
 }
 
-/* SEÇÕES */
+/* SEÇÕES GENÉRICAS */
 section.secao {
   min-height: 100vh;
   width: 100vw;
@@ -86,18 +85,12 @@ section.secao {
   position: relative;
   opacity: 0;
   transform: translateY(40px);
-  animation-name: fadeSlideIn;
-  animation-duration: 1s;
+  animation: fadeSlideIn 1s forwards;
   animation-timeline: view(block root 0% 80%);
-  animation-fill-mode: forwards;
 }
 
 .secao:nth-of-type(odd) {
   background: linear-gradient(145deg, #1c1c1c, #111);
-}
-
-.secao:nth-of-type(even) {
-  background: linear-gradient(145deg, #111, #1c1c1c);
 }
 
 @keyframes fadeSlideIn {
@@ -107,16 +100,13 @@ section.secao {
   }
 }
 
-/* SEÇÃO #banda */
+/* SEÇÃO BANDA (LETREIRO QUEEN) */
 #banda {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/queen.webp') no-repeat center center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/queen.webp') no-repeat center center;
   background-size: cover;
   color: #ffcc00;
   text-shadow: 1px 1px 3px #000;
   text-transform: uppercase;
-  overflow: hidden;
-  position: relative;
-  padding: 0 20px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -126,45 +116,19 @@ section.secao {
 
 #banda .word {
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 400px;
-  max-width: 90vw;
-  height: 120px;
-  cursor: pointer;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  max-width: 500px;
+  flex-wrap: nowrap;
 }
 
 #banda .char {
-  flex: 1;
-  position: relative;
   font-size: clamp(2.5rem, 16vw, 8rem);
   font-weight: 900;
-  font-family: 'Russo One', sans-serif;
-  transition: 0.3s ease-in-out;
   user-select: none;
-  display: inline-block;
-}
-
-#banda:hover .char:nth-child(1) {
-  margin-top: -30px;
-  transform: rotate(-20deg);
-}
-#banda:hover .char:nth-child(2) {
-  margin: -40px 0 0 10px;
-  transform: rotate(5deg);
-}
-#banda:hover .char:nth-child(3) {
-  margin: 15px 0 0 10px;
-  transform: rotate(12deg);
-}
-#banda:hover .char:nth-child(4) {
-  margin: -25px 0 0;
-  transform: rotate(5deg);
-}
-#banda:hover .char:nth-child(5) {
-  margin: -40px 5px 0;
-  transform: rotate(-10deg);
+  flex: none;
+  transition: 0.3s ease-in-out;
 }
 
 .legenda-tributo {
@@ -177,102 +141,12 @@ section.secao {
   user-select: none;
 }
 
-/* SEÇÃO 2 - Discografia */
-.secao2 {
-  padding: 80px 20px 40px;
-  width: 100vw;
-  margin: 0;
-  max-width: none;
-  text-align: center;
-  gap: 25px;
-  color: #ffcc00;
-}
-
-.secao2 h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #ffcc00;
-}
-
-.secao2 p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  line-height: 1.4;
-  color: #ddd;
-}
-
-.secao2 ul {
-  text-align: left;
-  max-width: 400px;
-  margin: 0 auto 25px;
-  list-style-type: disc;
-  color: #ddd;
-  padding-left: 20px;
-}
-
-.secao2 ul li {
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.secao2 img {
-  max-width: 60%;
-  max-height: 350px;
-  box-shadow: 0 0 20px #ffcc00;
-}
-
-/* FORMULÁRIO */
-form legend {
-  font-size: 1.4rem;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-form .form-label {
-  color: #fff;
-  font-size: 1rem;
-}
-
-form .form-control,
-form .form-select {
-  background-color: #222;
-  color: #fff;
-  border: 1px solid #ffcc00;
-  border-radius: 6px;
-}
-
-form .form-control::placeholder,
-form .form-select option {
-  color: #ccc;
-}
-
-form .form-control:focus,
-form .form-select:focus {
-  border-color: #fff000;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
-}
-
-form button {
-  font-weight: bold;
-  background-color: #ffcc00;
-  color: #000;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #e6b800;
-}
-
 /* PAINEL DE FOTOS */
 .painel-mosaico {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -287,38 +161,49 @@ form button:hover {
   aspect-ratio: 1 / 1;
 }
 
-.painel-item:nth-child(2n) {
-  grid-row: span 2;
-}
-
-.painel-item:nth-child(3n) {
-  grid-column: span 2;
-}
-
 .painel-item:hover {
   transform: scale(1.05) rotate(1deg);
   box-shadow: 0 0 15px #ffd700;
 }
 
-/* TABELA */
+/* TABELA DE EVENTOS COM SCROLL */
 .tabela-scroll-container {
-  overflow-x: auto;
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 2rem;
   width: 100%;
-  max-width: 100%;
-}
-
-.tabela-eventos {
-  min-width: 320px;
-  font-size: 0.9rem;
 }
 
 /* CARROSSEL */
 .carousel-inner img {
-  max-height: 300px;
+  height: 300px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
-/* BOTÃO SPOTIFY */
+/* SPOTIFY */
+#animacao {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #111;
+}
+
+#animacao h2 {
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+#animacao iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 250px;
+  margin: 0 auto 1rem;
+  border-radius: 12px;
+}
+
 .btn-video {
   display: inline-block;
   margin-top: 15px;
@@ -328,11 +213,12 @@ form button:hover {
   font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .btn-video:hover {
   background-color: #e6b800;
+  transform: scale(1.05);
 }
 
 /* RESPONSIVO */
@@ -347,6 +233,14 @@ form button:hover {
     width: 100%;
     padding: 0;
   }
+
+  .painel-mosaico {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  #banda .char {
+    font-size: clamp(2rem, 14vw, 6rem);
+  }
 }
 
 @media (max-width: 480px) {
@@ -354,90 +248,16 @@ form button:hover {
     padding: 20px 10px 40px;
   }
 
-  .secao2 ul {
-    padding-left: 16px;
-  }
-
-  .secao2 img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .painel-mosaico {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .painel-item {
-    aspect-ratio: 1 / 1;
-    min-height: 120px;
-    border-radius: 6px;
-    box-shadow: 0 0 5px #ffcc00;
-  }
-
-  #banda .char {
-    font-size: clamp(2rem, 16vw, 4rem);
-  }
-
-  .legenda-tributo {
-    font-size: 1rem;
-  }
-
-  .secao2 h2 {
-    font-size: 1.4rem;
-  }
-
-  .secao2 p,
-  .secao2 ul li {
-    font-size: 1rem;
-  }
-
-  form legend,
-  form .form-label {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 395px) {
-  .painel-mosaico {
-    grid-template-columns: 1fr;
-  }
-
   .painel-item {
     aspect-ratio: 16 / 9;
-    min-height: unset;
   }
 
   #banda .char {
-    font-size: clamp(1.5rem, 18vw, 3rem);
+    font-size: clamp(1.5rem, 18vw, 4rem);
   }
 
-  .secao2 h2 {
-    font-size: 1.3rem;
-  }
-
-  .secao2 p,
-  .secao2 ul li {
-    font-size: 0.95rem;
-  }
-
-  .legenda-tributo {
-    font-size: 0.9rem;
-  }
-
-  form legend,
-  form .form-label {
-    font-size: 0.9rem;
-  }
-
-  form button {
-    font-size: 0.95rem;
-    padding: 8px 16px;
-  }
-
+  .legenda-tributo,
   .btn-video {
     font-size: 0.95rem;
-    padding: 8px 16px;
   }
 }
