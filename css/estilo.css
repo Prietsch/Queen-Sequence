@@ -45,7 +45,7 @@ img:hover {
   transform: scale(1.02);
 }
 
-/* HEADER FIXO */
+/* MENU FIXO - HEADER */
 header.menu-sticky {
   position: fixed;
   top: 0;
@@ -79,14 +79,19 @@ section.secao {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 20px 40px;
+  padding: 40px 20px;
   background: linear-gradient(145deg, #111, #1c1c1c);
   text-align: center;
   color: #ffcc00;
   position: relative;
-  animation: fadeSlideIn 0.8s ease-out forwards;
   opacity: 0;
   transform: translateY(40px);
+  animation: fadeSlideIn 1s forwards;
+  animation-timeline: view(block root 0% 80%);
+}
+
+.secao:nth-of-type(odd) {
+  background: linear-gradient(145deg, #1c1c1c, #111);
 }
 
 @keyframes fadeSlideIn {
@@ -96,30 +101,35 @@ section.secao {
   }
 }
 
-/* LETREIRO ANIMADO */
-#banda .word {
+/* SEÇÃO #banda */
+#banda {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/queen.webp') no-repeat center center;
+  background-size: cover;
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px #000;
+  text-transform: uppercase;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#banda .word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
+  max-width: 500px;
   flex-wrap: nowrap;
 }
 
 #banda .char {
   font-size: clamp(2.5rem, 16vw, 8rem);
   font-weight: 900;
-  font-family: 'Russo One', sans-serif;
-  display: inline-block;
-  animation: floaty 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes floaty {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-10px);
-  }
+  user-select: none;
+  flex: none;
+  transition: 0.3s ease-in-out;
 }
 
 .legenda-tributo {
@@ -129,14 +139,16 @@ section.secao {
   font-size: 1.3rem;
   color: #ffcc00cc;
   letter-spacing: 2px;
+  user-select: none;
 }
 
 /* PAINEL DE FOTOS */
 .painel-mosaico {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
-  max-width: 1200px;
+  grid-auto-rows: 150px;
+  gap: 16px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -148,8 +160,14 @@ section.secao {
   box-shadow: 0 0 10px #ffcc00;
   transition: transform 0.3s;
   cursor: pointer;
-  height: auto;
-  aspect-ratio: auto;
+}
+
+.painel-item:nth-child(2n) {
+  grid-row: span 2;
+}
+
+.painel-item:nth-child(3n) {
+  grid-column: span 2;
 }
 
 .painel-item:hover {
@@ -157,23 +175,17 @@ section.secao {
   box-shadow: 0 0 15px #ffd700;
 }
 
-/* TABELA COM SCROLL E ALTURA FIXA */
+/* TABELA DE MOMENTOS MARCANTES */
 .tabela-scroll-container {
-  max-height: 200px;
+  max-height: 195px;
   overflow-y: auto;
+  margin-bottom: 2rem;
   width: 100%;
+  max-width: 800px;
 }
 
-.tabela-scroll-container table {
-  width: 100%;
-  color: #fff;
-}
-
-.tabela-scroll-container th, 
-.tabela-scroll-container td {
-  text-align: left;
-  padding: 8px;
-  color: #fff;
+.tabela-eventos {
+  font-size: 0.95rem;
 }
 
 /* CARROSSEL */
@@ -188,6 +200,8 @@ section.secao {
   text-align: center;
   padding: 60px 20px;
   background-color: #111;
+  position: relative;
+  z-index: 10;
 }
 
 #animacao h2 {
@@ -201,36 +215,127 @@ section.secao {
 #animacao iframe {
   width: 100%;
   max-width: 700px;
-  height: 350px;
-  margin: 0 auto 1rem;
-  display: block;
+  height: 352px;
+  margin: 0 auto 2rem;
   border-radius: 12px;
+  display: block;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1;
 }
 
 .btn-video {
-  display: inline-block;
   background-color: #ffcc00;
   color: #000;
   padding: 10px 24px;
   font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  animation: fadeInGrow 2s infinite alternate;
-}
-
-@keyframes fadeInGrow {
-  from {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  to {
-    transform: scale(1.07);
-    opacity: 1;
-  }
+  display: inline-block;
+  animation: bounce 1.2s infinite ease-in-out alternate;
+  transition: background-color 0.3s ease;
 }
 
 .btn-video:hover {
   background-color: #e6b800;
-  transform: scale(1.05);
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 480px) {
+  #animacao iframe {
+    height: 260px;
+  }
+}
+
+/* BOTÃO SPOTIFY ANIMAÇÃO */
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  #formulario .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #formulario picture,
+  #formulario form {
+    width: 100%;
+    padding: 0;
+  }
+
+  .painel-mosaico {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  #banda .char {
+    font-size: clamp(2rem, 14vw, 6rem);
+  }
+}
+
+@media (max-width: 480px) {
+  section.secao {
+    padding: 20px 10px 40px;
+  }
+
+  .painel-item {
+    min-height: 120px;
+  }
+
+  #banda .char {
+    font-size: clamp(1.5rem, 18vw, 4rem);
+  }
+
+  .btn-video {
+    font-size: 0.95rem;
+    padding: 8px 20px;
+  }
+
+  .tabela-scroll-container {
+    max-height: 170px;
+  }
+
+  #animacao iframe {
+    height: 260px;
+  }
+}
+
+
+#banda .word:hover .char:nth-child(1) {
+  transform: rotate(-20deg) translateY(-20px);
+}
+
+#banda .word:hover .char:nth-child(2) {
+  transform: rotate(10deg) translateY(-30px);
+}
+
+#banda .word:hover .char:nth-child(3) {
+  transform: rotate(-5deg) translateY(15px);
+}
+
+#banda .word:hover .char:nth-child(4) {
+  transform: rotate(5deg) translateY(-25px);
+}
+
+#banda .word:hover .char:nth-child(5) {
+  transform: rotate(-10deg) translateY(-30px);
+}
+
+#banda .char {
+  transition: transform 0.4s ease;
+  display: inline-block;
 }
