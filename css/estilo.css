@@ -109,9 +109,6 @@ section.secao {
   animation-name: fadeSlideIn;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-timeline: view(); /* Experimental */
-  animation-range-start: 0%;
-  animation-range-end: 50%;
   will-change: opacity, transform;
 }
 
