@@ -138,23 +138,6 @@ section.secao {
   will-change: transform;
 }
 
-/* Hover animado letras */
-#banda .word:hover .char:nth-child(1) {
-  transform: rotate(-20deg) translateY(-20px);
-}
-#banda .word:hover .char:nth-child(2) {
-  transform: rotate(10deg) translateY(-30px);
-}
-#banda .word:hover .char:nth-child(3) {
-  transform: rotate(-5deg) translateY(15px);
-}
-#banda .word:hover .char:nth-child(4) {
-  transform: rotate(5deg) translateY(-25px);
-}
-#banda .word:hover .char:nth-child(5) {
-  transform: rotate(-10deg) translateY(-30px);
-}
-
 .legenda-tributo {
   margin-top: 10px;
   font-family: 'Roboto', sans-serif;
