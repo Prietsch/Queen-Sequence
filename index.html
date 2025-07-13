@@ -4,6 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Queen - A Lenda do Rock</title>
+  
+  <!-- Metatags SEO -->
+  <meta name="description" content="Tributo à banda Queen, conheça sua história, discografia, momentos marcantes e muito mais." />
+  <meta name="keywords" content="Queen, Banda Queen, Rock, Música, Tributo, Discografia, Momentos Marcantes" />
+  <meta name="author" content="Seu Nome" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph para redes sociais -->
+  <meta property="og:title" content="Queen - A Lenda do Rock" />
+  <meta property="og:description" content="Tributo à banda Queen com informações sobre álbuns, fotos, carrossel e playlist." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seusite.github.io/queen-tributo" />
+  <meta property="og:image" content="https://seusite.github.io/img/queen_og.webp" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Queen - A Lenda do Rock" />
+  <meta name="twitter:description" content="Tributo à banda Queen com informações sobre álbuns, fotos, carrossel e playlist." />
+  <meta name="twitter:image" content="https://seusite.github.io/img/queen_og.webp" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
@@ -71,7 +93,14 @@
       <div class="container d-flex flex-wrap align-items-center justify-content-center">
         <picture class="col-md-6">
           <source srcset="./img/queen_forms.webp" type="image/webp" />
-          <img src="./img/queen_forms.jpg" alt="Imagem da banda Queen" class="img-fluid rounded" loading="lazy" />
+          <img 
+            src="./img/queen_forms.jpg" 
+            alt="Imagem da banda Queen" 
+            class="img-fluid rounded" 
+            loading="lazy" 
+            width="400" 
+            height="auto" 
+          />
         </picture>
         <form class="col-md-6 p-4">
           <fieldset>
@@ -150,7 +179,6 @@
           <div class="carousel-item"><img src="./img/queen6.jpg" class="d-block w-100" alt="Imagem Queen 6" loading="lazy" /></div>
         </div>
 
-        <!-- Botões corrigidos -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" aria-label="Slide anterior">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Anterior</span>
@@ -163,9 +191,18 @@
     </section>
 
     <!-- 6. Spotify -->
-    <section id="animacao">
+    <section id="animacao" class="secao">
       <h2>Ouça a Playlist do Queen</h2>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0ENBD2?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe 
+        style="border-radius:12px" 
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0ENBD2?utm_source=generator&theme=0" 
+        width="100%" 
+        height="352" 
+        frameborder="0" 
+        allowfullscreen 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy"
+      ></iframe>
       <a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0ENBD2?si=lgivheQ8RIa43wn4oNvU4w" target="_blank" class="btn-video">Abrir no Spotify</a>
     </section>
   </main>
