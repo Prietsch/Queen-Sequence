@@ -45,6 +45,29 @@ img:hover {
   transform: scale(1.02);
 }
 
+/* Ajustes para imagens específicas com proporções exatas */
+.img-queen-forms {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1500 / 1070;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ffcc00;
+}
+
+.img-discos {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 707 / 500;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ffcc00;
+}
+
 /* MENU FIXO */
 header.menu-sticky {
   position: fixed;
@@ -106,7 +129,8 @@ section.secao {
 
 /* SEÇÃO #banda */
 #banda {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/queen (1).webp') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('../img/queen (1).webp') no-repeat center center;
   background-size: cover;
   color: #ffcc00;
   text-shadow: 1px 1px 3px #000;
