@@ -190,7 +190,6 @@ section.secao {
 .secao2 h2 {
   font-size: 2rem;
   margin-bottom: 15px;
-  color: #ffcc00;
 }
 
 .secao2 p {
@@ -317,8 +316,34 @@ form button:hover {
   object-fit: cover;
 }
 
-/* BOTÃO SPOTIFY */
-.btn-video {
+/* SEÇÃO SPOTIFY */
+#animacao {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #1c1c1c, #111);
+  text-align: center;
+  color: #ffcc00;
+}
+
+#animacao h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#animacao iframe {
+  width: 90%;
+  max-width: 700px;
+  height: 352px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #ffcc00;
+}
+
+#animacao .btn-video {
   display: inline-block;
   margin-top: 15px;
   background-color: #ffcc00;
@@ -330,7 +355,7 @@ form button:hover {
   transition: background-color 0.3s;
 }
 
-.btn-video:hover {
+#animacao .btn-video:hover {
   background-color: #e6b800;
 }
 
@@ -351,15 +376,6 @@ form button:hover {
 @media (max-width: 480px) {
   section.secao {
     padding: 20px 10px 40px;
-  }
-
-  .secao2 ul {
-    padding-left: 16px;
-  }
-
-  .secao2 img {
-    max-width: 100%;
-    height: auto;
   }
 
   .painel-mosaico {
@@ -396,6 +412,19 @@ form button:hover {
   form .form-label {
     font-size: 1rem;
   }
+
+  #animacao h2 {
+    font-size: 1.4rem;
+  }
+
+  #animacao iframe {
+    height: 280px;
+  }
+
+  #animacao .btn-video {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
 }
 
 @media (max-width: 395px) {
@@ -430,13 +459,17 @@ form button:hover {
     font-size: 0.9rem;
   }
 
-  form button {
-    font-size: 0.95rem;
-    padding: 8px 16px;
+  form button,
+  .btn-video {
+    font-size: 0.9rem;
+    padding: 8px 14px;
   }
 
-  .btn-video {
-    font-size: 0.95rem;
-    padding: 8px 16px;
+  #animacao h2 {
+    font-size: 1.2rem;
+  }
+
+  #animacao iframe {
+    height: 240px;
   }
 }
